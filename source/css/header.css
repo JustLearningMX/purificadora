@@ -1,0 +1,33 @@
+#header{
+    /* border: 1px solid crimson; */
+    grid-area: header;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-icon-menu{
+    width: 30px;
+    cursor: pointer;
+}
+
+.logo-principal{    
+    width: 70%;
+    height: 80px;
+    object-fit: cover;    
+}
+
+/* Diseño para tabletas */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .logo-principal{    
+        width: 35%;
+    }
+}
+  
+/* Diseño para pc, laptops */
+@media screen and (min-width: 1025px){
+    .logo-principal{    
+        width: 35%;
+    }
+}
+  

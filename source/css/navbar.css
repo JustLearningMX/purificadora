@@ -1,0 +1,54 @@
+#navbar{
+    grid-area: navbar;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar-icons{
+    width: 30px;
+    cursor: pointer;
+}
+
+.menu{    
+    list-style: none;
+    display: flex;
+    /*align-items: center; Centra opcion del menú horizontalmente*/
+    flex-direction: column; /*Los acomoda uno debajo del otro*/
+    margin: 0;
+    background-color: var(--main-bg-color);
+    position: fixed;
+    top: 80px; /*De acuerdo al alto del elemento anterior*/
+    left: 100%;/*Opciones de menú fuera de pantalla*/
+    transition: left 0.3s;
+    width: 60%; /*Que ocupe todo el ancho*/
+    height: calc(100% - 80px); /*Ajusta el menú a la altura restante de la pantalla*/
+    overflow-y: auto; /*Agrega scroll x si la pantalla supera el contenido*/
+    color: var(--main-a-text-color);
+}
+
+#menu-items {
+    /* border: 1px solid crimson; */
+    line-height: 50px;
+    font-size: 1.3rem;
+    display: flex;    
+}
+
+.nav-link {
+    /* border: 1px solid cornflowerblue; */
+    width: 100%;
+    text-align: center;
+}
+
+.nav-link:hover,
+.menu li.selected a {
+    background-color: var(--button-main-bg);
+    color: var(--second-text-color);
+    transition: 0.5s;
+}
+
+/*Opciones del menú se muestran a la izquierda*/
+.nav-menu_visible{
+    left: 0;
+    transition: 0.5s;
+}
