@@ -1,12 +1,10 @@
-//HIRAM CHAVÉZ LÓPEZ -UNADM -PW2 U1-EA -4-FEBRERO-2022
+//HIRAM CHAVÉZ LÓPEZ -UNADM PT1 -15-abril-2022
 //ABRIR-CERRAR MENÚ HAMBURGUESA
 
 const navToggle = document.querySelector(".header-icon-menu"); //Icono de menu hamburguesa
 const navMenu = document.querySelector(".menu"); //Array de las opciones del menu
 
-//Escuchamos cuando se de clic en el icono de menu hamburguesa
-navToggle.addEventListener("click", () => {
-
+const abrirCerrarMenu = ()=>{
     navMenu.classList.toggle("nav-menu_visible");//Agrega la clase para mostrar el menu
 
     //Atributo para discapacidad visual
@@ -15,6 +13,11 @@ navToggle.addEventListener("click", () => {
     } else {
         navToggle.setAttribute("aria-label", "Cerrar menú");
     }
+};
+
+//Escuchamos cuando se de clic en el icono de menu hamburguesa
+navToggle.addEventListener("click", (event) => {
+    abrirCerrarMenu()
 });  
 
 //Escuchamos si hay clic en una opción del menú
@@ -34,6 +37,12 @@ window.addEventListener("click", (event) =>{
         nodoActual.classList.toggle("selected");//El nodo seleccionado lo remarcamos
         nodoSeleccionadoAnterior.classList.toggle("selected");//Y el nodo anterior remarcado, lo desmarcamos
 
-        navMenu.classList.toggle("nav-menu_visible");//Se oculta el menú          
+        abrirCerrarMenu();
+    }
+
+    //Cerramos el menú si el usuario da clic en otro lado
+    else if(nodoActual.children[0].getAttribute('class') !== "header-icon-menu" && navMenu.classList.contains("nav-menu_visible")) {
+        console.log(nodoActual)
+        abrirCerrarMenu();
     }
 });

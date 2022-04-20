@@ -19,11 +19,14 @@ html {
 
     --main-text-color: #727272;
     --second-text-color: #FFFFFF;
+    --third-text-color: #A6A6A6;
 
     --main-a-text-color: #023859;
     --second-a-text-color: #1593B9;
 
     --button-main-bg: #77E2EA;
+
+    --border-color-form: #A6A6A6;
 
   }
   

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purificadora Río Jordán</title>
 
+    <base href="/">
+
     <!-- Se importan estilos -->
     <link rel="stylesheet" href="./source/css/index.css">
     <link rel="stylesheet" href="./source/css/header.css">
@@ -14,33 +16,18 @@
     <link rel="stylesheet" href="./source/css/footer.css">
 
     <!-- Script para el menú de hamburguesa -->
-    <script defer src="./source/js/menu.js"></script>
+    <script defer src="./source/js/menuMain.js"></script>
+
+    <!-- Script para el menú de Usuario -->
+    <script defer src="./source/js/menuUser.js"></script>
 
 </head>
 <body>
     <!-- Encabezado: Logo y nombre de la empresa -->
-    <header id="header">
-        <img class="header-icon-menu" src="./source/assets/icon-menu1.png" alt="menu-principal">
-        <img class="logo-principal" src="./source/assets/logo-principal.png" alt="logo-purificadora-rio-jordán">
-    </header>
+    <script type="text/javascript" src="./source/js/header.js"></script>
 
-    <!-- Menú principal -->
-    <nav id="navbar">
-        <!-- <img class="navbar-icons navbar-icon-menu" src="./source/assets/icon-menu1.png" alt="menu-principal"> -->
-
-        <ul class="menu">
-            <li id="menu-items" class="selected"><a href="#inicio" class="nav-link"> Nosotros </a></li>
-            <li id="menu-items"><a href="#" class="nav-link"> Servicios </a></li>
-            <li id="menu-items"><a href="#" class="nav-link"> Clientes </a></li>
-            <li id="menu-items"><a href="#contacto" class="nav-link"> Contacto </a></li>
-        </ul>        
-
-        <!-- Icono para usuarios -->        
-        <div class="imgUserContainer">
-            <img class="navbar-icons navbar-icon-user" src="./source/assets/icon-user2.png" alt="icono-usuario">
-        </div>
-
-    </nav>
+    <!-- Menú principal y Menú para el usuario -->
+    <script type="text/javascript" src="./source/js/navbar.js"></script>
 
     <!-- Sección principal -->
     <main id="main">
@@ -48,8 +35,6 @@
     </main>
 
     <!-- Pie de página -->
-    <footer id="footer">
-        El Footer: pié de página
-    </footer>
+    <script type="text/javascript" src="./source/js/footer.js"></script>
 </body>
 </html>

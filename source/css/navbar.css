@@ -1,15 +1,16 @@
 #navbar{
     grid-area: navbar;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
 .navbar-icons{
-    width: 30px;
+    width: 40px;
     cursor: pointer;
 }
 
+/* Menú principal */
 .menu{    
     list-style: none;
     display: flex;
@@ -22,7 +23,7 @@
     left: 100%;/*Opciones de menú fuera de pantalla*/
     transition: left 0.3s;
     width: 60%; /*Que ocupe todo el ancho*/
-    height: calc(100% - 80px); /*Ajusta el menú a la altura restante de la pantalla*/
+    height: calc(70% - 80px); /*Ajusta el menú a la altura restante de la pantalla*/
     overflow-y: auto; /*Agrega scroll x si la pantalla supera el contenido*/
     color: var(--main-a-text-color);
 }
@@ -51,4 +52,45 @@
 .nav-menu_visible{
     left: 0;
     transition: 0.5s;
+}
+
+/*******************
+ *Menú del usuario**
+ ******************/
+
+.subMenuUser{
+    /* border: 1px solid crimson; */
+    list-style: none;    
+    background-color: var(--main-bg-color);
+    position: fixed;
+    top: calc(80px - 50%); /*De acuerdo al alto del elemento anterior*/
+    left: 77%;/*Opciones de menú fuera de pantalla*/
+    transition: left 0.3s;
+    width: 22%; /*Ancho a ocupar*/
+    height: auto; 
+    overflow-y: auto; /*Agrega scroll x si la pantalla supera el contenido*/
+    color: var(--main-a-text-color);
+}
+
+#menu-items-user {    
+    line-height: 40px;
+    font-size: 1.1rem;
+    display: flex;    
+}
+  
+.menu-link-user {
+    width: 100%;
+    text-align: center;
+}
+
+.menu-link-user:hover,
+.subMenuUser li.selected a {
+    background-color: var(--button-main-bg);
+    color: var(--second-text-color);
+    transition: 0.5s;
+}
+
+.nav-menu-user_visible{
+    top: 80px;
+    transition: 0.3s;
 }
