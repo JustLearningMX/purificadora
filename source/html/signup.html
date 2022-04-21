@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purificadora Río Jordán: Registrar</title>
+    <title>Purificadora: Registrar usuario</title>
     
     <base href="/">
     <!-- <script src="../js/colocarBaseHref.js"></script> -->
@@ -26,6 +26,12 @@
 
 </head>
 <body>
+    <script>
+        usuarioLogueado = window.localStorage.getItem('usuarioLogueadoPurificadora');
+        if(usuarioLogueado){
+            window.location.href='./source/html/dashboard.html';
+        }
+    </script>
     <!-- Encabezado: Logo y nombre de la empresa -->
     <script type="text/javascript" src="./source/js/header.js"></script>
 
@@ -39,7 +45,7 @@
                 <h3 class="tituloForm">Regístrese:</h3>
                 <p class="leyendaForm">Y goce de los beneficios que tenemos para usted.</p>
 
-                <form id="solicitar-form" action="./php/panelControl.php" method="POST">
+                <form id="solicitar-form" onsubmit="alert('click')">  <!-- action="./php/panelControl.php" method="POST"> -->
                     <input name="nombreUsuario" class="input-form" type="text" placeholder="Nombre completo" required autofocus>
                     <input name="celularUsuario" class="input-form" type="number" placeholder="Celular 10 dígitos" required>                   
                     <input name="emailUsuario" class="input-form" type="email" placeholder="Correo electrónico">

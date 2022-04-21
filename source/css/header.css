@@ -18,16 +18,38 @@
 }
 
 /* Diseño para tabletas */
-@media screen and (min-width: 600px) and (max-width: 1024px) {
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+    #header{
+        justify-content: space-evenly;
+        /* border: 1px solid green; */
+    }
+    
+    .header-icon-menu{
+        width: 45px;
+        cursor: pointer;
+    }
+    
     .logo-principal{    
-        width: 35%;
+        width: 42%;
     }
 }
   
 /* Diseño para pc, laptops */
-@media screen and (min-width: 1025px){
-    .logo-principal{    
-        width: 35%;
+@media screen and (min-width: 1024px){
+    #header{
+        justify-content:flex-start;
+        /* border: 1px solid green; */
+    }
+
+    .header-icon-menu{
+        display: none;
+    }
+
+    .logo-principal{
+        /* border: 1px solid goldenrod; */
+        height: 110px;
+        width: 30%;
+        margin-left: 8rem;
     }
 }
   

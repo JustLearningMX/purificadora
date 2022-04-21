@@ -52,21 +52,21 @@ html {
   
   /* Diseño para tabletas */
   @media screen and (min-width: 600px) and (max-width: 1024px) {
-    body {
+    /* body {
       grid-template:
         "header header" 80px
         "navbar   main" 1fr
-        "navbar footer" auto / 170px 1fr;
-    }
+        "footer footer" auto / 170px 1fr;
+    } */
   }
   
   /* Diseño para pc, laptops */
-  @media screen and (min-width: 1025px){
+  @media screen and (min-width: 1024px){
     body {
       grid-template:
-        "header navbar" 80px
-        "main   main" 1fr
-        "footer footer" auto / 1fr .8fr;
+        "header header" 110px
+        "navbar   main" 1fr
+        "footer footer" auto / .35fr 1.2fr;
     }
   }
   

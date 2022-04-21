@@ -94,3 +94,97 @@
     top: 80px;
     transition: 0.3s;
 }
+
+/* Tabletas */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .navbar-icons{
+        width: 50px;
+    }
+
+    /* Menú principal */
+    .menu{
+        width: 40%; /*Que ocupe todo el ancho*/
+        height: calc(60% - 80px); /*Ajusta el menú a la altura restante de la pantalla*/
+    }
+
+    #menu-items {
+        /* border: 1px solid crimson; */
+        line-height: 60px;
+        font-size: 1.5rem;
+    }
+
+    #menu-items-user {    
+        line-height: 50px;
+        font-size: 1.3rem;
+    }
+}
+
+/*Laptops/Computadoras*/
+@media screen and (min-width: 1024px){
+    #navbar{
+        /* border: 1px solid crimson; */
+        grid-area: navbar;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar-icons{
+        /* border: 1px solid blue; */
+        width: 70px;
+        margin-top: 2.3rem;
+        cursor:auto;
+    }
+
+    /* Menú principal */
+    .menu{
+        /* border: 1px solid blue; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: var(--main-bg-color);
+        position: absolute;
+        top: 0; 
+        left: 43%;
+        width: 43%;
+        height: 110PX;
+        line-height: 110px;
+    }
+
+    #menu-items {
+        /* border: 1px solid green; */
+        line-height: 110px;
+        font-size: 1.7rem;
+        padding: 0 10px;
+    }
+    
+    .nav-link:hover,
+    .menu li.selected a {
+        background-color: transparent;
+        color: var(--second-a-text-color);
+    }
+
+    /*******************
+    *Menú del usuario**
+    ******************/
+
+    .subMenuUser{
+        /* border: 1px solid green; */
+        background-color: var(--main-bg-color);
+        top: 230px; /*De acuerdo al alto del elemento anterior*/
+        left: 0;
+        width: 290px;
+    }
+
+    #menu-items-user {    
+        line-height: 70px;
+        font-size: 1.7rem;
+        font-weight: 500;
+    }
+
+    .nav-menu-user_visible{
+        top: 230px;
+        transition: 0;
+    }
+}

@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purificadora Río Jordán: Iniciar sesión</title>
+    <title>Purificadora: Iniciar sesión</title>
     
     <base href="/">
     
@@ -23,8 +22,18 @@
     <!-- Script para el menú de Usuario -->
     <script defer src="./source/js/menuUser.js"></script>
 
+    <script defer src="./source/utils/httpClient.js"></script>
+    <script defer src="./source/js/validacionesLogin.js"></script>
+
 </head>
 <body>
+    <script>
+        usuarioLogueado = window.localStorage.getItem('usuarioLogueadoPurificadora');
+        if(usuarioLogueado){
+            window.location.href='./source/html/dashboard.html';
+        }
+    </script>
+
     <!-- Encabezado: Logo y nombre de la empresa -->
     <script type="text/javascript" src="./source/js/header.js"></script>
 
@@ -38,7 +47,7 @@
                 <h3 class="tituloForm">Inicie sesión:</h3>
                 <p class="leyendaForm">Acceda a su información y conozca sus compras.</p>
 
-                <form id="solicitar-form" action="./php/panelControl.php" method="POST">
+                <form id="solicitar-form" onsubmit="recibiendoCampos(event, celularUsuario, passwordUsuario)">  <!-- action="./php/panelControl.php" method="POST"> -->
                     <input name="celularUsuario" class="input-form" type="number" placeholder="Celular 10 dígitos" required>                   
                     <input name="passwordUsuario" class="input-form" type="password" placeholder="Contraseña" required>
     
