@@ -104,7 +104,7 @@
     /* Menú principal */
     .menu{
         width: 40%; /*Que ocupe todo el ancho*/
-        height: calc(60% - 80px); /*Ajusta el menú a la altura restante de la pantalla*/
+        height: calc(65% - 80px); /*Ajusta el menú a la altura restante de la pantalla*/
     }
 
     #menu-items {
@@ -122,18 +122,19 @@
 /*Laptops/Computadoras*/
 @media screen and (min-width: 1024px){
     #navbar{
-        /* border: 1px solid crimson; */
+        /* border: 1px solid blue; */
         grid-area: navbar;
         display: flex;
         justify-content: center;
         align-items: flex-start;
         width: 100%;
+        /* margin-left: 1px; */
     }
 
     .navbar-icons{
         /* border: 1px solid blue; */
-        width: 70px;
-        margin-top: 2.3rem;
+        width: 50px;
+        margin-top: 2rem;
         cursor:auto;
     }
 
@@ -155,7 +156,7 @@
     #menu-items {
         /* border: 1px solid green; */
         line-height: 110px;
-        font-size: 1.7rem;
+        font-size: 1.4rem;
         padding: 0 10px;
     }
     
@@ -172,19 +173,20 @@
     .subMenuUser{
         /* border: 1px solid green; */
         background-color: var(--main-bg-color);
-        top: 230px; /*De acuerdo al alto del elemento anterior*/
-        left: 0;
-        width: 290px;
+        position: absolute;
+        top: 190px; /*De acuerdo al alto del elemento anterior*/
+        left: 2px;
+        width: 178px;
     }
 
     #menu-items-user {    
-        line-height: 70px;
-        font-size: 1.7rem;
+        line-height: 50px;
+        font-size: 1.3rem;
         font-weight: 500;
     }
 
     .nav-menu-user_visible{
-        top: 230px;
+        top: 190px;
         transition: 0;
     }
 }

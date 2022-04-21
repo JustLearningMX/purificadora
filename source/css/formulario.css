@@ -2,7 +2,6 @@
 
 /*Estilos generales para la sección*/
 #formularioContainer {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,4 +97,47 @@
 
 .pieForm > span{
   color: var(--second-a-text-color);
+}
+
+/*Laptops/Computadoras --> 600px + */
+@media screen and (min-width: 600px){
+
+  /*Estilos generales para la sección*/
+  #formularioContainer {
+    border: 1px solid var(--border-color-form);
+    border-radius: 10px;
+  }
+
+  .formularioImagenContainer{
+    border: none;
+    margin-right: 10px;
+  }
+
+  .ingresarDatos{
+    border: none;
+  }
+
+  .formImage{
+    border: none;
+  }
+
+  /*Estilos al título del formulario*/
+  .tituloForm {
+    color: var(--second-a-text-color);
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .leyendaForm{
+    font-size: .95rem;
+  }
+
+  /*Estilos propios del botón*/
+  .submittButton {
+    font-size: 1.4rem;
+  }
+
+  .pieForm{
+    font-size: .85rem;
+  }
 }

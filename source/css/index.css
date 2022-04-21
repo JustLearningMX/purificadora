@@ -51,14 +51,14 @@ html {
   }
   
   /* Diseño para tabletas */
-  @media screen and (min-width: 600px) and (max-width: 1024px) {
+  /* @media screen and (min-width: 600px) and (max-width: 1024px) { */
     /* body {
       grid-template:
         "header header" 80px
         "navbar   main" 1fr
         "footer footer" auto / 170px 1fr;
     } */
-  }
+  /* } */
   
   /* Diseño para pc, laptops */
   @media screen and (min-width: 1024px){
@@ -66,7 +66,7 @@ html {
       grid-template:
         "header header" 110px
         "navbar   main" 1fr
-        "footer footer" auto / .35fr 1.2fr;
+        "footer footer" auto / .2fr 1.2fr;
     }
   }
   
