@@ -23,6 +23,7 @@ navToggle.addEventListener("click", (event) => {
 //Escuchamos si hay clic en una opción del menú
 window.addEventListener("click", (event) =>{
     const nodoActual = event.path[1];//Ubicamos el nodo al que se dió clic
+    // console.log(nodoActual.getAttribute('id'))
 
     let nodoSeleccionadoAnterior;//Variable para guardar el nodo que previo seleccionado
 
@@ -42,7 +43,13 @@ window.addEventListener("click", (event) =>{
 
     //Cerramos el menú si el usuario da clic en otro lado
     else if(nodoActual.children[0].getAttribute('class') !== "header-icon-menu" && navMenu.classList.contains("nav-menu_visible")) {
-        console.log(nodoActual)
+        // console.log(nodoActual)
         abrirCerrarMenu();
+    };
+
+    //SI SE DIÓ CLIC EN EL LOGO PRINCIPAL --> Retorna a la página principal
+    const isLogoPrincipal = event.path[0].getAttribute('class') === 'logo-principal' ? true : false;
+    if(isLogoPrincipal){
+        window.location.href='/';
     }
 });

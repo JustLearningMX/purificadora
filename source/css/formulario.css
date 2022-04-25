@@ -2,6 +2,7 @@
 
 /*Estilos generales para la sección*/
 #formularioContainer {
+  /* margin: 0 5rem; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,15 +65,29 @@
   padding-left: 8px;
 }
 
+.errorCampoOcultar{
+  display: none;
+}
+
+.errorCampoMostrar{
+  display: block;
+  border: 1px solid crimson;
+  color: crimson;
+  font-size: .7rem;
+  padding: 8px;
+}
+
 /*Estilos a la sección del botón*/
 #buttonContainer {  
+  /* border: 1px solid crimson; */
   display: flex;
   justify-content: center;
   margin: 15px 0;
 }
 
 /*Estilos propios del botón*/
-.submittButton {
+.submittButtonLogin,
+.submittButtonRegister {
   width: 100%;
   color: var(--second-text-color);
   padding: 0.9rem;
@@ -84,7 +99,14 @@
   color: var(--main-a-text-color);
 }
 
-.submittButton:hover{
+.buttonAwaiting{
+  background-color: #dedddd;
+  color: var(--third-text-color);
+  cursor: auto;
+}
+
+.submittButtonLogin:hover,
+.submittButtonRegister:hover{
   opacity: 0.9;
   border-radius: 40px;
 }
@@ -97,6 +119,7 @@
 
 .pieForm > span{
   color: var(--second-a-text-color);
+  cursor: pointer;
 }
 
 /*Laptops/Computadoras --> 600px + */
@@ -133,7 +156,8 @@
   }
 
   /*Estilos propios del botón*/
-  .submittButton {
+  .submittButtonLogin,
+  .submittButtonRegister {
     font-size: 1.4rem;
   }
 

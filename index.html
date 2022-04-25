@@ -14,34 +14,64 @@
     <link rel="stylesheet" href="./source/css/navbar.css">
     <link rel="stylesheet" href="./source/css/main.css">
     <link rel="stylesheet" href="./source/css/footer.css">
+    <link rel="stylesheet" href="./source/css/formulario.css">
+    <link rel="stylesheet" href="./source/css/spinner.css">
+    <link rel="stylesheet" href="./source/css/logout.css">
+
+    <!-- Se importan los MÓDULOS JS necesarios -->
+    <script type="module" src="./source/config/usuario.js"></script>
+
+    <script type="module" src="./source/js/menuUserOpt.js"></script>    
+    <script type="module" src="./source/js/validacionesLogin.js"></script>
+    <script type="module" src="./source/js/validacionesSignup.js"></script>
+
+    <script type="module" src="./source/components/footer.js"></script>
+    <script type="module" src="./source/components/spinner.js"></script>
+    <script type="module" src="./source/components/login.js"></script>
+    <script type="module" src="./source/components/signup.js"></script>
+    <script type="module" src="./source/components/logout.js"></script>
+
+    <script type="module" src="./source/utils/crearNodos.js"></script>
+    <script type="module" src="./source/utils/httpClient.js"></script>
+    <script type="module" src="./source/utils/mostrarErrorCampo.js"></script>
 
     <!-- Script para el menú de hamburguesa -->
-    <script defer src="./source/js/menuMain.js"></script>
+    <script defer type="module" src="./source/js/menuMain.js"></script>
 
     <!-- Script para el menú de Usuario -->
-    <script defer src="./source/js/menuUser.js"></script>
+    <script defer type="module" src="./source/js/menuUserEvents.js"></script>    
 
 </head>
 <body>
-    <script>
-        let usuarioLogueado = window.localStorage.getItem('usuarioLogueadoPurificadora');
-        // if(usuarioLogueado){
-        //     window.location.href='./source/html/dashboard.html';
-        // }
-    </script>
 
-    <!-- Encabezado: Logo y nombre de la empresa -->
-    <script type="text/javascript" src="./source/js/header.js"></script>
+    <header id="header">
+        <img class="header-icon-menu" src="./source/assets/icon-menu1.png" alt="menu-principal">
+        <img class="logo-principal" src="./source/assets/logo-principal.png" alt="logo-purificadora-rio-jordán">
+    </header>
 
-    <!-- Menú principal y Menú para el usuario -->
-    <script type="text/javascript" src="./source/js/navbar.js"></script>
+    <nav id="navbar">
+        <ul class="menu">
+            <li id="menu-items" class="selected"><a href="#inicio" class="nav-link"> Nosotros </a></li>
+            <li id="menu-items"><a href="#" class="nav-link"> Servicios </a></li>
+            <li id="menu-items"><a href="#" class="nav-link"> Clientes </a></li>
+            <li id="menu-items"><a href="#contacto" class="nav-link"> Contacto </a></li>
+        </ul>
+        <div class="imgUserContainer">
+            <img class="navbar-icons navbar-icon-user" src="./source/assets/icon-user2.png" alt="icono-usuario">
+            <ul class=" subMenuUser">
+
+            </ul>
+        </div>
+    </nav>
 
     <!-- Sección principal -->
     <main id="main">
-        El main: sección principal
+        <p>El main: sección principal</p>
     </main>
 
     <!-- Pie de página -->
-    <script type="text/javascript" src="./source/js/footer.js"></script>
+    <footer id="footer">        
+
+    </footer>    
 </body>
 </html>

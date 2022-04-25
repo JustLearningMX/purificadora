@@ -39,10 +39,11 @@
     /* border: 1px solid cornflowerblue; */
     width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 
 .nav-link:hover,
-.menu li.selected a {
+.menu li.selected span {
     background-color: var(--button-main-bg);
     color: var(--second-text-color);
     transition: 0.5s;
@@ -84,7 +85,7 @@
 }
 
 .menu-link-user:hover,
-.subMenuUser li.selected a {
+.subMenuUser li.selected span {
     background-color: var(--button-main-bg);
     color: var(--second-text-color);
     transition: 0.5s;

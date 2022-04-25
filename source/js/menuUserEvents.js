@@ -1,6 +1,8 @@
 //HIRAM CHAVÉZ LÓPEZ -UNADM PT1 -18-abril-2022
 //ABRIR-CERRAR MENÚ USUARIO
 
+import { controladorSubMenuUsuario } from '../config/usuario.js';
+
 const userToggle = document.querySelector(".navbar-icon-user"); //Icono de Usuario
 const navUserMenu = document.querySelector(".subMenuUser"); //Array de las opciones del menu
 
@@ -23,11 +25,11 @@ userToggle.addEventListener("click", () => {
 //Escuchamos si hay clic en una opción del menú
 window.addEventListener("click", (event) =>{
     const nodoActual = event.path[1];//Ubicamos el nodo al que se dió clic
-
+    
     let nodoSeleccionadoAnterior;//Variable para guardar el nodo previo seleccionado
 
     if(nodoActual.getAttribute('id') === "menu-items-user"){//Si se eligió una opción del menú Usuario
-
+        
         for (let i = 0; i < navUserMenu.children.length; i++) {//Recorremos las opciones del menu
             if(navUserMenu.children[i].className){//Si una opción del menú tiene la clase "selected"
                 nodoSeleccionadoAnterior = navUserMenu.children[i];//Guardamos ese nodo
@@ -40,7 +42,12 @@ window.addEventListener("click", (event) =>{
             nodoSeleccionadoAnterior.classList.toggle("selected");//Y el nodo anterior remarcado, lo desmarcamos
 
         abriCerrarMenu();
+
+        //Pasamos la acción al siguiente módulo: Login, SignUp, Dashboard, etc
+        const opcionElegida = nodoActual.children[0].textContent;
+        controladorSubMenuUsuario(opcionElegida);
     } 
+    
     //Cerramos el menú si el usuario da clic en otro lado
     else if(nodoActual.getAttribute('class') !== "imgUserContainer" && navUserMenu.classList.contains("nav-menu-user_visible")) {
         abriCerrarMenu();

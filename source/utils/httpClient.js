@@ -2,7 +2,7 @@
 //EL TIPO DE SOLICITUD QUE DESEA IMPLEMENTAR
 
 //función asíncrona
-async function requestApi(path, req, arrBody) {
+export async function requestApi(path, req, arrBody, arrUsuario) {
 
   const API = "https://purificadora-rio-jordan-api.herokuapp.com/v1"; //Base de la API a consumir
 
@@ -23,12 +23,13 @@ async function requestApi(path, req, arrBody) {
   }
   else if(req === "POST")
   {
-    console.log(body);
+    // console.log(body);
     const resultado = await fetch(API + path, {
       //Se concatena api y path
       mode: "cors",
       method: req, //tipo de petición
       body: JSON.stringify(body),
+      usuario: arrUsuario ? JSON.stringify(arrUsuario) : null,
       headers: new Headers({
         "Content-Type": "application/json; charset=utf-8",
         "Access-Control-Allow-Origin": "*",
