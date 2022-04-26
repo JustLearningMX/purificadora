@@ -27,7 +27,7 @@ export function validandoLogin(e, telefono, password, boton) {
                     console.log(data.error);      
                     mostrarError('Teléfono o Contraseña errónea', isFirstTime, boton, 'Iniciar sesión');
                 } else { //Si todo salió bien 
-                    console.log(data);
+                    // console.log(data);
                     //Guardamos al USUARIO y su TOKEN en el localStorage
                     window.localStorage.setItem(
                         "usuarioLogueadoPurificadora", JSON.stringify(data.user)

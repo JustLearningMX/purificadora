@@ -4,6 +4,8 @@
 const navToggle = document.querySelector(".header-icon-menu"); //Icono de menu hamburguesa
 const navMenu = document.querySelector(".menu"); //Array de las opciones del menu
 
+import { controladorMenuMain } from '../config/menuMain.js'
+
 const abrirCerrarMenu = ()=>{
     navMenu.classList.toggle("nav-menu_visible");//Agrega la clase para mostrar el menu
 
@@ -39,6 +41,11 @@ window.addEventListener("click", (event) =>{
         nodoSeleccionadoAnterior.classList.toggle("selected");//Y el nodo anterior remarcado, lo desmarcamos
 
         abrirCerrarMenu();
+
+        //Pasamos la acción al módulo correspondiente: Nosotros, Servicios, Contacto, etc
+        const opcionElegida = nodoActual.children[0].textContent;
+        // console.log(opcionElegida)
+        controladorMenuMain(opcionElegida);
     }
 
     //Cerramos el menú si el usuario da clic en otro lado

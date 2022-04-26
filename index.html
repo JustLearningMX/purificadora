@@ -20,23 +20,26 @@
 
     <!-- Se importan los MÓDULOS JS necesarios -->
     <script type="module" src="./source/config/usuario.js"></script>
+    <script type="module" src="./source/config/menuMain.js"></script>
 
-    <script type="module" src="./source/js/menuUserOpt.js"></script>    
+    <script type="module" src="./source/js/menuUserOpt.js"></script>
+    <script type="module" src="./source/js/menuMainOpt.js"></script>
     <script type="module" src="./source/js/validacionesLogin.js"></script>
     <script type="module" src="./source/js/validacionesSignup.js"></script>
 
     <script type="module" src="./source/components/footer.js"></script>
-    <script type="module" src="./source/components/spinner.js"></script>
-    <script type="module" src="./source/components/login.js"></script>
-    <script type="module" src="./source/components/signup.js"></script>
-    <script type="module" src="./source/components/logout.js"></script>
+    <!-- <script type="module" src="./source/components/spinner.js"></script>
+    <script type="module" src="./source/components/login.js"></script> -->
+    <!-- <script type="module" src="./source/components/signup.js"></script>
+    <script type="module" src="./source/components/logout.js"></script> -->
+    <!-- <script type="module" src="./source/components/nosotros.js"></script> -->
 
     <script type="module" src="./source/utils/crearNodos.js"></script>
     <script type="module" src="./source/utils/httpClient.js"></script>
     <script type="module" src="./source/utils/mostrarErrorCampo.js"></script>
 
     <!-- Script para el menú de hamburguesa -->
-    <script defer type="module" src="./source/js/menuMain.js"></script>
+    <script defer type="module" src="./source/js/menuMainEvents.js"></script>
 
     <!-- Script para el menú de Usuario -->
     <script defer type="module" src="./source/js/menuUserEvents.js"></script>    
@@ -51,10 +54,6 @@
 
     <nav id="navbar">
         <ul class="menu">
-            <li id="menu-items" class="selected"><a href="#inicio" class="nav-link"> Nosotros </a></li>
-            <li id="menu-items"><a href="#" class="nav-link"> Servicios </a></li>
-            <li id="menu-items"><a href="#" class="nav-link"> Clientes </a></li>
-            <li id="menu-items"><a href="#contacto" class="nav-link"> Contacto </a></li>
         </ul>
         <div class="imgUserContainer">
             <img class="navbar-icons navbar-icon-user" src="./source/assets/icon-user2.png" alt="icono-usuario">
@@ -66,7 +65,13 @@
 
     <!-- Sección principal -->
     <main id="main">
-        <p>El main: sección principal</p>
+        <script type="module">
+            import { mostrarSeccionNosotros } from './source/components/nosotros.js';
+            import { mostrarDashboard } from './source/components/dashboard.js';
+            import { usuario } from './source/config/usuario.js';
+
+            usuario.logueado ? mostrarDashboard() : mostrarSeccionNosotros();
+        </script>
     </main>
 
     <!-- Pie de página -->

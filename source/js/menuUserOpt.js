@@ -2,17 +2,12 @@
  * LLENA UN SUBMENÚ CON LAS OPCIONES DEL USUARIO
  */
 
+
 //Obtenemos si un usuario ya está logueado
 import { usuario } from '../config/usuario.js';
 
 //Obtenemos nodo del submenú usuario en el Navbar
 const subMenuUser = document.querySelector('.subMenuUser');
-
-//Función que borra el token de usuario del local Storage
-function logout() {
-    window.localStorage.removeItem('usuarioLogueadoPurificadora');
-    window.location.href='./source/html/login.html';
-}
 
 //opciones si el usuario no está registrado
 const opcionesSubmenuUserOut = [
@@ -31,7 +26,7 @@ const opcionesSubmenuUserCliente = [
 const opcionesSubmenuUserAdmin = [
     'Reportes',
     'Dashboard',
-    'salir'
+    'Salir'
 ];
 
 const mostrarOpcionesSubMenu = (subMenuDeOpciones)=>{
@@ -51,7 +46,6 @@ const mostrarOpcionesSubMenu = (subMenuDeOpciones)=>{
 
         //Anexamos la lista al submenú
         subMenuUser.appendChild(li);
-        // console.log(li);
     });
 }
 
@@ -66,4 +60,4 @@ else if(usuario.logueado && usuario.admin){
 // Si el usuario está logueado y no es Admin entonces es Cliente
 else {
     mostrarOpcionesSubMenu(opcionesSubmenuUserCliente);
-}
+}  
