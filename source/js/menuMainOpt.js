@@ -24,7 +24,7 @@ const mostrarOpcionesMenuPrincipal = (menuDeOpciones)=>{
         
         //Nombre del menú y sus atributos
         const span = document.createElement('span');
-        span.setAttribute('class', `nav-link`)
+        span.setAttribute('class', `nav-link nav-link-main`)
         span.textContent = `${opcion}`;
 
         //Anexamos el item a la lista del submenu

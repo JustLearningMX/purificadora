@@ -166,8 +166,8 @@
         padding: 0 10px;
     }
     
-    .nav-link:hover,
-    .menu li.selected a {
+    .nav-link-main:hover,
+    .menu li.selected span {
         background-color: transparent;
         color: var(--second-a-text-color);
     }
