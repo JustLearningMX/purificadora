@@ -144,6 +144,7 @@ const mostrarMisCompras = () => {
   crearMiscompras(main);
 };
 
+/* 
 //Escuchamos si hay clic los botones
 document.addEventListener("click", (event) =>{
     const nodoActual = event.path[0];//Ubicamos el nodo al que se dió clic
@@ -181,6 +182,6 @@ document.addEventListener("click", (event) =>{
         validandoLogin(event, telefono, password, boton)
     }
 
-});
+}); */
 
 export { mostrarMisCompras };
