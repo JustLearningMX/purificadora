@@ -29,6 +29,10 @@ html {
     --border-color-form: #A6A6A6;
 
   }
+
+  input:focus {
+    border: 1px solid green;
+  }
   
   /*Estilos del cuerpo principal*/
   body {

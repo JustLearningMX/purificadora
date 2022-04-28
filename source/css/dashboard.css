@@ -1,0 +1,72 @@
+#formularioDashboard {
+    /* margin: 0 5rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .tituloDashboard {
+    color: var(--second-a-text-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.divDatosDashboard{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color-form);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.label{    
+    margin-bottom: 7px;
+    padding-left: 3px;
+}
+
+.input-dashboard{
+    height: 40px;
+    padding: 2px 7px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    margin-bottom: 20px;
+}
+
+.linkCambiarPass{
+    font-size: 1.1rem;
+    color: var(--second-a-text-color);
+    cursor: pointer;    
+}
+
+.divBotonesDashboard{
+    /* border: 1px solid crimson; */
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.updateButton,
+.deleteButton {
+  width: auto;
+  color: var(--second-text-color);
+  padding: .8rem 1rem;
+  background-color: var(--button-main-bg);
+  border-color: var(--button-main-bg);
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  color: var(second-text-color);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.deleteButton{
+    background-color: crimson;
+}

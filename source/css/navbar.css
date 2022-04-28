@@ -42,6 +42,7 @@
     width: 100%;
     text-align: center;
     cursor: pointer;
+    padding: 0 5px;
 }
 
 .nav-link:hover,
@@ -67,18 +68,20 @@
     background-color: var(--main-bg-color);
     position: fixed;
     top: calc(80px - 50%); /*De acuerdo al alto del elemento anterior*/
-    left: 77%;/*Opciones de menú fuera de pantalla*/
+    left: 69%;/*Opciones de menú fuera de pantalla*/
     transition: left 0.3s;
-    width: 22%; /*Ancho a ocupar*/
+    width: auto; /*Ancho a ocupar*/
     height: auto; 
     overflow-y: auto; /*Agrega scroll x si la pantalla supera el contenido*/
     color: var(--main-a-text-color);
+    /* padding: 0 5px; */
 }
 
 #menu-items-user {    
     line-height: 40px;
     font-size: 1.1rem;
-    display: flex;    
+    display: flex;
+    /* border: 1px solid crimson;     */
 }
   
 .menu-link-user {

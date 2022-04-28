@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./source/css/spinner.css">
     <link rel="stylesheet" href="./source/css/logout.css">
     <link rel="stylesheet" href="./source/css/miscompras.css">
+    <link rel="stylesheet" href="./source/css/dashboard.css">
 
     <!-- Se importan los MÓDULOS JS necesarios -->
     <script type="module" src="./source/config/usuario.js"></script>
@@ -72,8 +73,6 @@
             import { mostrarMisCompras } from './source/components/miscompras.js';
             import { mostrarDashboard } from './source/components/dashboard.js';
             import { usuario } from './source/config/usuario.js';
-
-            alert(usuario.logueado )
 
             usuario.logueado && usuario.admin ? mostrarDashboard() : 
             usuario.logueado && !usuario.admin ? mostrarMisCompras() :
