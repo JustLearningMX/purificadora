@@ -1,21 +1,21 @@
 import { crearElemento } from '../utils/crearNodos.js';
+import { usuario } from '../config/usuario.js'
 
 //Se crean elementos para el componente Dashboard
 const crearDashboard = ()=>{
 
     //Se crean los Nodos que se ocuparán llamando la función crearElemento()
     const section = crearElemento('section', [{type: 'id', name: 'formularioDashboard'}]);
+    const divTitulo = crearElemento('div', [{type: 'class', name: 'divTitulo'}]);
     const h3 = crearElemento('h3', [{type: 'class', name: 'tituloDashboard'}]);
     const pLeyenda = crearElemento('p', [{type: 'class', name: 'leyendaForm'}]);
     const divError = crearElemento('div', [{type: 'class', name: 'errorCampoOcultar'}]);
-    const divDatosCuenta = crearElemento('div', [{type: 'class', name: 'divDatosDashboard'}]);
+    const divDatosCuenta = crearElemento('div', [{type: 'class', name: 'divDatosDashboard divCuenta'}]);
     const divCambiarPass = crearElemento('div', [{type: 'class', name: 'divDatosDashboard divCambiarPass'}]);
-    // const pPass = crearElemento('p', [{type: 'class', name: 'pieForm'}]);
     const spanPass = crearElemento('span', [{type: 'class', name: 'linkCambiarPass'}]);
-    const divDatosPersonales = crearElemento('div', [{type: 'class', name: 'divDatosDashboard'}]);
-    const divDatosOtros = crearElemento('div', [{type: 'class', name: 'divDatosDashboard'}]);
+    const divDatosPersonales = crearElemento('div', [{type: 'class', name: 'divDatosDashboard divDatosPersonales'}]);
+    const divDatosOtros = crearElemento('div', [{type: 'class', name: 'divDatosDashboard divDatosOtros'}]);
 
-    // const form = crearElemento('form', [{type: 'id', name: 'solicitar-form'}]);
     const labelNombre = crearElemento('label', [{
         type: 'class',
         name: 'label'
@@ -343,6 +343,10 @@ const crearDashboard = ()=>{
     const divBoton = crearElemento('div', [{type: 'class', name: 'divBotonesDashboard'}]);
     const updateBoton = crearElemento('input', [
         {
+            type: 'id', 
+            name: 'input-button'
+        },
+        {
         type: 'class', 
         name: 'updateButton'
         },
@@ -356,6 +360,10 @@ const crearDashboard = ()=>{
         }
     ]);
     const deleteBoton = crearElemento('input', [
+        {
+            type: 'id', 
+            name: 'input-button'
+        },    
         {
         type: 'class', 
         name: 'deleteButton'
@@ -387,6 +395,33 @@ const crearDashboard = ()=>{
     labelEmailRecuperacion.textContent = 'Email de recuperación:';
     labelTelefonoSecundario.textContent = 'Teléfono secundario:';
     spanPass.textContent = 'Cambiar contraseña'
+
+    //Revisamos si /config/usuario.js --> usuarios.datos tiene 
+    //datos para ponerlos en los inputs correspondientes
+    if(usuario.datos){
+        inputNombre.value = usuario.datos.nombre;
+        inputApellidos.value = usuario.datos.apellidos;
+        inputTipo.value = usuario.datos.tipo;
+        if(usuario.datos.email)
+            inputEmail.value = usuario.datos.email;
+        inputCelular.value = usuario.datos.telefono;
+
+        if(usuario.datos.direccion)
+            inputDireccion.value = usuario.datos.direccion;
+        if(usuario.datos.ciudad)
+            inputCiudad.value = usuario.datos.ciudad
+        if(usuario.datos.estado)
+            inputEstado.value = usuario.datos.estado;
+        if(usuario.datos.cp)
+            inputCp.value = usuario.datos.cp;
+        if(usuario.datos.rfc)
+            inputRfc.value = usuario.datos.rfc;
+
+        if(usuario.datos.emailRecuperacion)
+            inputEmailRecuperacion.value = usuario.datos.emailRecuperacion;
+        if(usuario.datos.telefonoRecuperacion)
+            inputTelefonoSecundario.value = usuario.datos.telefonoRecuperacion;
+    }
 
     //Anexamos nodos hijos en orden
     divBoton.appendChild(updateBoton);
@@ -420,12 +455,10 @@ const crearDashboard = ()=>{
     divDatosOtros.appendChild(inputEmailRecuperacion);
     divDatosOtros.appendChild(labelTelefonoSecundario);
     divDatosOtros.appendChild(inputTelefonoSecundario);
-    
-    // form.appendChild(inputPassword);
-    // form.appendChild(divBoton);
 
-    section.appendChild(h3);
-    section.appendChild(pLeyenda);
+    divTitulo.appendChild(h3);
+    divTitulo.appendChild(pLeyenda);
+    section.appendChild(divTitulo);
     section.appendChild(divError);
     section.appendChild(divDatosCuenta);
     section.appendChild(divCambiarPass);

@@ -1,12 +1,10 @@
 .spinnerContainer{
-    /* border: 1px solid coral;     */
     position: absolute;
-    margin-top: 14px;
-    margin-left: 100px;
+    align-self: center;
 }
 
 .spinnerImage{
-    width: 24px;
+    width: var(--size-spinner);
     animation: spinner 1s linear infinite;
 }
 
@@ -14,16 +12,5 @@
 @keyframes spinner{
     to {
         transform: rotate(360deg);
-    }
-}
-
-/************************************************************/
-/**************Laptops/Computadoras --> 1024px + *************/
-/************************************************************/
-/************************************************************/
-
-@media screen and (min-width: 1024px){ 
-    .spinnerContainer{
-        margin-left: 210px;
     }
 }

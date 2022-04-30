@@ -7,7 +7,7 @@
 import { crearElemento } from '../utils/crearNodos.js';
 
 //Función que crea un Elemento Spinner
-import { spinner } from './spinner.js';
+import { agregarSpinner } from '../utils/agregarSpinner.js';
 
 //Importamos el componente Login
 import { mostrarLogin } from './login.js';
@@ -138,6 +138,10 @@ const crearFormularioSignUp = (main) => {
   const divBoton = crearElemento('div', [{type: 'id', name: 'buttonContainer'}]);
   const inputBoton = crearElemento('input', [
     {
+        type: 'id', 
+        name: 'input-button'
+    },
+    {
       type: 'class', 
       name: 'submittButtonRegister'
     },
@@ -230,14 +234,10 @@ document.addEventListener("click", (event) =>{
         
         event.preventDefault();
         
-        //Obtenemos el botón
+        //Obtenemos el botón y adjuntamos el spinner
         const botonContenedor = document.querySelector('#buttonContainer');
-
-        //Creamos un componente Spinner
-        const spinnerBoton = spinner();
-
-        //Adjuntamos el spinner al botón
-        botonContenedor.appendChild(spinnerBoton);
+        const spinnerElement = agregarSpinner(botonContenedor);
+        spinnerElement.style.left = '80%';
 
         //Deshabilitamos el botón
         const boton = document.querySelector('.submittButtonRegister');

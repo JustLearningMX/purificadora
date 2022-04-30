@@ -6,8 +6,8 @@
 //Función que crea Elementos HTML
 import { crearElemento } from '../utils/crearNodos.js';
 
-//Función que crea un Elemento Spinner
-import { spinner } from './spinner.js';
+//Función que crea y poner un Elemento Spinner a otro Elemento HTML
+import { agregarSpinner } from '../utils/agregarSpinner.js'
 
 //Importamos el componente Signup
 import { mostrarSignUp } from './signup.js';
@@ -64,6 +64,10 @@ const crearFormularioLogin = (main) => {
       ], true); // required
   const divBoton = crearElemento('div', [{type: 'id', name: 'buttonContainer'}]);
   const inputBoton = crearElemento('input', [
+    {
+      type: 'id', 
+      name: 'input-button'
+    },
     {
       type: 'class', 
       name: 'submittButtonLogin'
@@ -148,23 +152,19 @@ document.addEventListener("click", (event) =>{
         const password = event.path[2].children[1].value;
         
         event.preventDefault();
-        
-        //Obtenemos el botón
+
+        //Obtenemos el contenedor del botón, y lo enviamos para ponerle el spinner
         const botonContenedor = document.querySelector('#buttonContainer');
-
-        //Creamos un componente Spinner
-        const spinnerBoton = spinner();
-
-        //Adjuntamos el spinner al botón
-        botonContenedor.appendChild(spinnerBoton);
+        const spinnerElement = agregarSpinner(botonContenedor);
+        spinnerElement.style.left = '80%';
 
         //Deshabilitamos el botón
         const boton = document.querySelector('.submittButtonLogin');
         boton.value = 'Validando datos'; //Cambiamos el texto del botón
-        boton.setAttribute('disabled', 'true'); //Deshabilitamos el botón
+        boton.disabled = true; //Deshabilitamos el botón
         boton.classList.toggle("buttonAwaiting"); //Agregamos CSS al botón ya deshabilitado
         
-        validandoLogin(event, telefono, password, boton)
+        validandoLogin(event, telefono, password, boton);
     }
 
     if(isLinkRegistrar){

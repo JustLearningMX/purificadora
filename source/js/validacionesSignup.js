@@ -57,22 +57,18 @@ export function validandoSignup(e, nombre, apellidos, telefono, email, password,
 
         requestApi('/usuarios/signup', 'POST', body, usuario)
             .then((data) => {//Se recibe el JSON con los datos de la petición
-                
                 boton.value = 'Conectando a la BD'; //Cambiamos el texto del botón
 
                 if(data.error) { //Si hubo un error
-                    console.log(data.error);                    
-                    mostrarError('Teléfono o Contraseña errónea', isFirstTime, boton, 'Registrar');
-
+                    mostrarError(data.message, isFirstTime, boton, 'Registrar');
                 } else { //Si todo salió bien 
-                    // console.log('Usuario guardado: ', data);
                     boton.value = 'Todo fue exitoso'; //Cambiamos el texto del botón
                     mostrarLogin();
                 }
             
             })
             .catch((error)=>{
-                console.log('Hubo un error: ', error);
+                // console.log('Hubo un error: ', error);
                 mostrarError('Error en la aplicación. Intente más tarde', isFirstTime, boton, 'Registrar');
             });
     }   

@@ -1,9 +1,37 @@
 #formularioDashboard {
-    /* margin: 0 5rem; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    /* border: 1px solid crimson; */
+    display: grid;
+    gap: 1rem;
+    grid-template:
+        "titulo" auto
+        "cuenta" auto
+        "password" auto
+        "personal" auto
+        "otros" auto
+        "botones" auto / 1fr;
+  }
+
+  .divCuenta{
+    grid-area: cuenta;
+  }
+
+  .divCambiarPass{
+    grid-area: password;    
+  }
+
+  .divDatosPersonales{
+    grid-area: personal;
+  }
+  
+  .divDatosOtros{
+    grid-area: otros;
+  }
+
+  .divTitulo{
+      grid-area: titulo;
+      padding: 0;
+      margin: 0;
+      text-align: center;
   }
   
   .tituloDashboard {
@@ -13,14 +41,11 @@
 }
 
 .divDatosDashboard{
-    padding: 0 10px;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-color-form);
-    width: 100%;
     padding: 1rem;
     border-radius: 20px;
-    margin-bottom: 15px;
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -41,13 +66,17 @@
 .linkCambiarPass{
     font-size: 1.1rem;
     color: var(--second-a-text-color);
-    cursor: pointer;    
+    cursor: pointer;
 }
 
-.divBotonesDashboard{
-    /* border: 1px solid crimson; */
-    width: 100%;
-    margin: 20px;
+.linkCambiarPass:hover{
+    opacity: 0.9;
+}
+
+.divBotonesDashboard{    
+    grid-area: botones;
+    /* width: 100%; */
+    margin: 20px 0;
     display: flex;
     justify-content: space-around;
 }
@@ -56,7 +85,7 @@
 .deleteButton {
   width: auto;
   color: var(--second-text-color);
-  padding: .8rem 1rem;
+  padding: .8rem;
   background-color: var(--button-main-bg);
   border-color: var(--button-main-bg);
   cursor: pointer;
@@ -67,6 +96,55 @@
   font-weight: 500;
 }
 
+.updateButton:hover,
+.deleteButton:hover{
+  opacity: 0.9;
+  border-radius: 40px;
+}
+
 .deleteButton{
     background-color: crimson;
+}
+
+/************************************************************/
+/**************Tablets y LAPTOPS/PC --> 600px + *************/
+/************************************************************/
+/************************************************************/
+@media screen and (min-width: 600px){
+    #formularioDashboard {
+        grid-template:
+            "titulo titulo" auto
+            "cuenta personal" auto            
+            "otros password" auto            
+            "otros botones" auto / 1fr 1fr;       
+      }
+      
+      .tituloDashboard {
+        font-size: 1.9rem;
+        font-weight: 600;
+    }
+    
+    .divDatosDashboard{
+        font-size: 1.4rem;
+    }
+    
+    .input-dashboard{
+        font-size: 1.1rem;
+    }
+    
+    .linkCambiarPass{
+        margin-top: 20px;
+        font-size: 1.3rem;
+    }
+    
+    .updateButton,
+    .deleteButton {
+      padding: 0 .8rem;
+      font-size: 1.2rem;
+      height: 55px;
+    }
+    
+    .deleteButton{
+        background-color: crimson;
+    }   
 }

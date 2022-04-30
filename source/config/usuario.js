@@ -4,6 +4,8 @@
  */
 
 const usuarioLogueado = JSON.parse(window.localStorage.getItem('usuarioLogueadoPurificadora'));
+const usuarioDatos = JSON.parse(window.localStorage.getItem('usuarioDatos'));
+
 const usuarioCompras = JSON.parse(window.localStorage.getItem('usuarioCompras'));
 
 //Componentes a mostrar según elija el usuario
@@ -20,7 +22,8 @@ const usuario = usuarioLogueado ? {
     telefono: usuarioLogueado.telefono,
     email: usuarioLogueado.email,
     admin: usuarioLogueado.admin ? true : false,
-    token: usuarioLogueado.token
+    token: usuarioLogueado.token,
+    datos: usuarioDatos ? usuarioDatos.user : null,
 } : {
     logueado: false
 };
@@ -38,6 +41,7 @@ function controladorSubMenuUsuario (opcionUsuario){
     opcionUsuario && opcionUsuario === 'Mis compras' ? mostrarMisCompras() : 
     opcionUsuario && opcionUsuario === 'Dashboard' ? mostrarDashboard() : 
     opcionUsuario && opcionUsuario === 'Reportes' ? mostrarReportes() : 
+    opcionUsuario && opcionUsuario === 'Ventas' ? console.log('Eligió Ventas') : 
     opcionUsuario && opcionUsuario === 'Salir' ? mostrarLogout() : 
     console.log('No existe');
 }

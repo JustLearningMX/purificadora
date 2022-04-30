@@ -68,7 +68,7 @@
     background-color: var(--main-bg-color);
     position: fixed;
     top: calc(80px - 50%); /*De acuerdo al alto del elemento anterior*/
-    left: 69%;/*Opciones de menú fuera de pantalla*/
+    left: 71%;/*Opciones de menú fuera de pantalla*/
     transition: left 0.3s;
     width: auto; /*Ancho a ocupar*/
     height: auto; 

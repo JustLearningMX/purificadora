@@ -83,11 +83,12 @@
   display: flex;
   justify-content: center;
   margin: 15px 0;
+  position: relative;
 }
 
 /*Estilos propios del botón*/
 .submittButtonLogin,
-.submittButtonRegister {
+.submittButtonRegister {  
   width: 100%;
   color: var(--second-text-color);
   padding: 0.9rem;
@@ -97,12 +98,7 @@
   font-size: 1.3rem;
   border: none;
   color: var(--main-a-text-color);
-}
-
-.buttonAwaiting{
-  background-color: #dedddd;
-  color: var(--third-text-color);
-  cursor: auto;
+  /* border: 1px solid green; */
 }
 
 .submittButtonLogin:hover,

@@ -17,8 +17,8 @@
 }
 
 .submittButtonSalir{
-    margin: 4rem 0 1rem 0;    
-    width: 100%;
+    /* margin: 4rem 0 1rem 0;     */
+    width: 250px;
     color: var(--second-text-color);
     padding: 0.9rem;
     background-color: var(--button-main-bg);
@@ -29,6 +29,12 @@
     border: none;
     color: var(--main-a-text-color);
 }
+
+.buttonAwaiting{
+    background-color: #dedddd;
+    color: var(--third-text-color);
+    cursor: auto;
+  }
 
 .submittButtonSalir:hover{
     opacity: 0.8;
@@ -52,6 +58,7 @@
     }
     
     .submittButtonSalir{
+        width: 300px;
         font-size: 1.5rem;
         padding: 1.1rem;
     }
@@ -75,6 +82,7 @@
     }
     
     .submittButtonSalir{
+        width: 330px;
         font-size: 2rem;
         padding: 1.2rem;
     }

@@ -39,6 +39,10 @@ const crearMiscompras = (main) => {
   const divBoton = crearElemento('div', [{type: 'class', name: 'buttonsComprasContainer'}]);
   const botonComprar = crearElemento('input', [
     {
+        type: 'id', 
+        name: 'input-button'
+    },
+    {
       type: 'class', 
       name: 'botonComprarCompras'
     },
@@ -53,6 +57,10 @@ const crearMiscompras = (main) => {
   ]);
   const botonSolicitar = crearElemento('input', [
     {
+        type: 'id', 
+        name: 'input-button'
+    },
+    {
       type: 'class', 
       name: 'botonSolicitarCompras'
     },
@@ -66,6 +74,10 @@ const crearMiscompras = (main) => {
     }
   ]);
   const botonHistorial = crearElemento('input', [
+    {
+        type: 'id', 
+        name: 'input-button'
+    },
     {
       type: 'class', 
       name: 'botonHistorialCompras'

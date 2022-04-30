@@ -1,5 +1,6 @@
 import { requestApi } from '../utils/httpClient.js';
 import { mostrarError } from '../utils/mostrarErrorCampo.js';
+import { getUsuario } from '../js/peticiones/getUsuario.js';
 
 export function validandoLogin(e, telefono, password, boton) {
     e.preventDefault();
@@ -21,7 +22,7 @@ export function validandoLogin(e, telefono, password, boton) {
         requestApi('/usuarios/login', 'POST', body)
             .then((data) => {
                 //Se recibe el JSON con los datos de la petición
-                boton.value = 'Conectando a la BD'; //Cambiamos el texto del botón
+                boton.value = 'Conectando a BD...'; //Cambiamos el texto del botón
 
                 if(data.error) { //Si hubo un error
                     console.log(data.error);      
@@ -32,9 +33,14 @@ export function validandoLogin(e, telefono, password, boton) {
                     window.localStorage.setItem(
                         "usuarioLogueadoPurificadora", JSON.stringify(data.user)
                     );
-                    boton.value = 'Todo fue exitoso'; //Cambiamos el texto del botón
-                    console.log(`Bienvenido ${data.user.email}`);
-                    window.location.href='/';
+                    boton.value = '¡Todo fue exitoso!'; //Cambiamos el texto del botón
+
+                    //Obtenemos los datos del Usuario para guardalos en /config/usuario.js --> usuario.datos
+                    const tokenUsuario = 'Bearer ' + data.user.token;
+                    getUsuario(tokenUsuario)
+                        .then(()=>{
+                            window.location.href='/';
+                        });                    
                 }
             
             })

@@ -2,8 +2,14 @@
  * PERMITE AL USUARIO ABANDONAR LA SESIÓN
  */
 
+//Datos del usuario
 import { usuario } from '../config/usuario.js';
+
+//Crea elemento o nodo HTML
 import { crearElemento } from '../utils/crearNodos.js';
+
+//Pone un Elemento Spinner a otro Elemento HTML
+import { agregarSpinner } from '../utils/agregarSpinner.js'
 
 //Se crean elementos para el componente Salir
 const crearSecciónSalir = ()=>{
@@ -11,7 +17,12 @@ const crearSecciónSalir = ()=>{
     //Se crean los Nodos que se ocuparán llamando la función crearElemento()
     const section = crearElemento('section', [{type: 'id', name: 'sectionSalir'}]);
     const p = crearElemento('p', [{type: 'class', name: 'textoSalir'}]);
+    const divBoton = crearElemento('div', [{type: 'id', name: 'buttonContainer'}]);
     const inputBoton = crearElemento('input', [
+        {
+            type: 'id', 
+            name: 'input-button'
+        },
         {
           type: 'class', 
           name: 'submittButtonSalir'
@@ -29,7 +40,8 @@ const crearSecciónSalir = ()=>{
     p.textContent = '¿Desea cerrar la sesión?';
     
     section.appendChild(p);
-    section.appendChild(inputBoton);
+    divBoton.appendChild(inputBoton);
+    section.appendChild(divBoton);
 
     return section;
 }
@@ -49,17 +61,37 @@ export function mostrarLogout() {
 
 //Ponemos a la escucha el botón Cerrar sesión
 document.addEventListener('click', (event)=>{
-
-    const nodoActual = event.path[0];//Ubicamos el nodo al que se dió clic
-
-    const isBotonSalir = nodoActual.getAttribute('class') === 'submittButtonSalir' ? true : false;
-
     event.preventDefault();
 
+    const nodoActual = event.path[0];//Ubicamos el nodo al que se dió clic
+    // console.log(event.path[0].textContent)
+
+    // const isMenuSalir = event.path[0].textContent && event.path[0].textContent === "Salir" ? true : false;    
+    // if(isMenuSalir){
+    //   const botonContenedor = document.querySelector('#buttonContainer');
+    //   botonContenedor.style.width = "85%";
+    // }    
+
+    const isBotonCerrarSesion = nodoActual.getAttribute('class') === 'submittButtonSalir' ? true : false;
+
     //si el usuario está logueado
-    if(isBotonSalir && usuario.logueado){
-        window.localStorage.removeItem('usuarioLogueadoPurificadora');
-        window.location.href='/';
+    if(isBotonCerrarSesion && usuario.logueado){
+
+      //Obtenemos el contenedor del botón, y lo enviamos para ponerle el spinner
+      const botonContenedor = document.querySelector('#buttonContainer');
+      const spinnerElement = agregarSpinner(botonContenedor);
+
+      spinnerElement.style.left = '80%';
+
+      //Deshabilitamos el botón
+      const boton = document.querySelector('.submittButtonSalir');
+      boton.value = 'Finalizando'; //Cambiamos el texto del botón
+      boton.disabled = true; //Deshabilitamos el botón
+      boton.classList.toggle("buttonAwaiting"); //Agregamos CSS al botón ya deshabilitado
+
+      window.localStorage.removeItem('usuarioLogueadoPurificadora');
+      window.localStorage.removeItem('usuarioDatos');
+      window.location.href='/';
     }
 
 });

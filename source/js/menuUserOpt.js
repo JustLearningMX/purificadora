@@ -24,8 +24,9 @@ const opcionesSubmenuUserCliente = [
 
 //Usuario registrado como Admin
 const opcionesSubmenuUserAdmin = [
-    'Reportes',
+    'Ventas',
     'Dashboard',
+    'Reportes',
     'Salir'
 ];
 
