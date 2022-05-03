@@ -23,9 +23,25 @@ const usuario = usuarioLogueado ? {
     email: usuarioLogueado.email,
     admin: usuarioLogueado.admin ? true : false,
     token: usuarioLogueado.token,
-    datos: usuarioDatos ? usuarioDatos.user : null,
+    datos: usuarioDatos ? usuarioDatos.user || usuarioDatos.usuario : null,
 } : {
     logueado: false
+};
+
+//Método que actualiza la variable 'usuario' cuando
+//se modifica el localStorage
+const actualizarUsuario = () => {
+
+    const usuarioLogueado = JSON.parse(window.localStorage.getItem('usuarioLogueadoPurificadora'));
+    const usuarioDatos = JSON.parse(window.localStorage.getItem('usuarioDatos'));
+
+    usuario.id = usuarioLogueado.id;
+    usuario.telefono = usuarioLogueado.telefono;
+    usuario.email = usuarioLogueado.email;
+    usuario.admin = usuarioLogueado.admin ? true : false;
+    usuario.token = usuarioLogueado.token;
+    usuario.datos = usuarioDatos ? usuarioDatos.user || usuarioDatos.usuario : null;
+    
 };
 
 const compras = usuarioCompras ? {
@@ -46,4 +62,4 @@ function controladorSubMenuUsuario (opcionUsuario){
     console.log('No existe');
 }
 
-export { usuario, controladorSubMenuUsuario, compras };
+export { usuario, controladorSubMenuUsuario, compras, actualizarUsuario };

@@ -2,12 +2,12 @@
 //EL TIPO DE SOLICITUD QUE DESEA IMPLEMENTAR
 
 //función asíncrona
-export async function requestApi(path, req, arrBody, arrUsuario, token) {
+export async function requestApi(path, req, arrBody, token) {
 
   const API = "https://purificadora-rio-jordan-api.herokuapp.com/v1"; //Base de la API a consumir
   // const API = "http://localhost:4015/v1";
 
-  const body = (req === "POST") ? arrBody : {};
+  const body = (req === "POST" || req === "PUT") ? arrBody : {};
 
   if(req === "GET"){
     
@@ -22,20 +22,37 @@ export async function requestApi(path, req, arrBody, arrUsuario, token) {
         "Authorization": token,
       }),
     }); //Si todo OK se retorna el JSON con los resultados, si no el error
-    return resultado.ok ? await resultado.json() : await {"error": resultado.status, "errorMsg": resultado.statusText};
+    return await resultado.json();
   }
   else if(req === "POST")
   {
-    // console.log(body);
+      // usuario: arrUsuario ? JSON.stringify(arrUsuario) : null,
     const resultado = await fetch(API + path, {
       //Se concatena api y path
       mode: "cors",
       method: req, //tipo de petición
       body: JSON.stringify(body),
-      usuario: arrUsuario ? JSON.stringify(arrUsuario) : null,
       headers: new Headers({
         "Content-Type": "application/json; charset=utf-8",
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "*",        
+        "Authorization": token,
+      }),
+    }); 
+    //Retornamos los datos recibidos de la petición
+    return await resultado.json();
+  }
+  else if(req === "PUT")
+  {
+      // usuario: arrUsuario ? JSON.stringify(arrUsuario) : null,
+    const resultado = await fetch(API + path, {
+      //Se concatena api y path
+      mode: "cors",
+      method: req, //tipo de petición
+      body: JSON.stringify(body),
+      headers: new Headers({
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",        
+        "Authorization": token,
       }),
     }); 
     //Retornamos los datos recibidos de la petición

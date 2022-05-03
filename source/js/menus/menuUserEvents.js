@@ -1,7 +1,7 @@
 //HIRAM CHAVÉZ LÓPEZ -UNADM PT1 -18-abril-2022
 //ABRIR-CERRAR MENÚ USUARIO
 
-import { controladorSubMenuUsuario } from '../config/usuario.js';
+import { controladorSubMenuUsuario } from '../../config/usuario.js';
 
 const userToggle = document.querySelector(".navbar-icon-user"); //Icono de Usuario
 const navUserMenu = document.querySelector(".subMenuUser"); //Array de las opciones del menu

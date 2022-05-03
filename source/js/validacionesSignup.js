@@ -53,9 +53,10 @@ export function validandoSignup(e, nombre, apellidos, telefono, email, password,
          };
 
          //Si es usuario Admin, puede crear todo tipo de usuarios
-         const usuario = user.admin ? user : null;
+        //  const usuario = user.admin ? user : null;
+        const tokenUsuario = 'Bearer ' + user.token;
 
-        requestApi('/usuarios/signup', 'POST', body, usuario)
+        requestApi('/usuarios/signup', 'POST', body, tokenUsuario)
             .then((data) => {//Se recibe el JSON con los datos de la petición
                 boton.value = 'Conectando a la BD'; //Cambiamos el texto del botón
 

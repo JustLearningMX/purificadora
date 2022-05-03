@@ -25,7 +25,6 @@ export function validandoLogin(e, telefono, password, boton) {
                 boton.value = 'Conectando a BD...'; //Cambiamos el texto del botón
 
                 if(data.error) { //Si hubo un error
-                    console.log(data.error);      
                     mostrarError('Teléfono o Contraseña errónea', isFirstTime, boton, 'Iniciar sesión');
                 } else { //Si todo salió bien 
                     // console.log(data);

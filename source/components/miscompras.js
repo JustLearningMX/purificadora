@@ -44,7 +44,7 @@ const crearMiscompras = (main) => {
     },
     {
       type: 'class', 
-      name: 'botonComprarCompras'
+      name: 'comprarPedido'
     },
     {
       type: 'type', 
@@ -62,7 +62,7 @@ const crearMiscompras = (main) => {
     },
     {
       type: 'class', 
-      name: 'botonSolicitarCompras'
+      name: 'solicitarLlenado'
     },
     {
       type: 'type', 
@@ -80,7 +80,7 @@ const crearMiscompras = (main) => {
     },
     {
       type: 'class', 
-      name: 'botonHistorialCompras'
+      name: 'historialCompras'
     },
     {
       type: 'type', 

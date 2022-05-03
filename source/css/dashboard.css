@@ -3,12 +3,18 @@
     display: grid;
     gap: 1rem;
     grid-template:
-        "titulo" auto
+        "titulo" auto        
+        "error" auto
         "cuenta" auto
         "password" auto
         "personal" auto
         "otros" auto
         "botones" auto / 1fr;
+  }
+
+  .errorCampoOcultar{
+    grid-area: error;
+    border-radius: 5px;
   }
 
   .divCuenta{
@@ -74,6 +80,7 @@
 }
 
 .divBotonesDashboard{    
+  /* border: 1px solid green; */
     grid-area: botones;
     /* width: 100%; */
     margin: 20px 0;
@@ -83,15 +90,14 @@
 
 .updateButton,
 .deleteButton {
-  width: auto;
+  width: 150px;
   color: var(--second-text-color);
-  padding: .8rem;
+  padding: .8rem 0;
   background-color: var(--button-main-bg);
   border-color: var(--button-main-bg);
   cursor: pointer;
   font-size: 1rem;
   border: none;
-  color: var(second-text-color);
   border-radius: 8px;
   font-weight: 500;
 }
@@ -114,12 +120,13 @@
     #formularioDashboard {
         grid-template:
             "titulo titulo" auto
+            "error error" auto
             "cuenta personal" auto            
             "otros password" auto            
             "otros botones" auto / 1fr 1fr;       
-      }
+    }
       
-      .tituloDashboard {
+    .tituloDashboard {
         font-size: 1.9rem;
         font-weight: 600;
     }
@@ -139,12 +146,9 @@
     
     .updateButton,
     .deleteButton {
+      width: 170px;
       padding: 0 .8rem;
       font-size: 1.2rem;
       height: 55px;
     }
-    
-    .deleteButton{
-        background-color: crimson;
-    }   
 }

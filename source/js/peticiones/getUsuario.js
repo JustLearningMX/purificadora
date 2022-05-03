@@ -4,22 +4,23 @@
  * LO GUARDA EN /CONFIG/USUARIO usuario.datos
  */
 import { requestApi } from '../../utils/httpClient.js';
+import { mostrarErrorGeneral } from '../../utils/mensajeGeneral.js';
 
 export async function getUsuario(token) {
     try {                            
 
-        const data = await requestApi('/usuarios', 'GET', null, null, token);
+        const data = await requestApi('/usuarios', 'GET', null, token);
 
         if(data.error) { //Si hubo un error
-            console.log('Hubo un error: ', data.error);      
+            mostrarErrorGeneral('Hubo un error: ', data.error);      
         } else { //Si todo salió bien 
-            console.log(data);
+            
             //Guardamos los datos del Usuario en el localStorage
             window.localStorage.setItem(
                 "usuarioDatos", JSON.stringify(data)
             );
         }
     } catch (error) {
-        console.log('Hubo un error: ', error);        
+        mostrarErrorGeneral('Hubo un error: ', error);        
     }    
 }

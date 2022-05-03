@@ -63,14 +63,7 @@ export function mostrarLogout() {
 document.addEventListener('click', (event)=>{
     event.preventDefault();
 
-    const nodoActual = event.path[0];//Ubicamos el nodo al que se dió clic
-    // console.log(event.path[0].textContent)
-
-    // const isMenuSalir = event.path[0].textContent && event.path[0].textContent === "Salir" ? true : false;    
-    // if(isMenuSalir){
-    //   const botonContenedor = document.querySelector('#buttonContainer');
-    //   botonContenedor.style.width = "85%";
-    // }    
+    const nodoActual = event.path[0];//Ubicamos el nodo al que se dió clic  
 
     const isBotonCerrarSesion = nodoActual.getAttribute('class') === 'submittButtonSalir' ? true : false;
 

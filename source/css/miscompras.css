@@ -47,9 +47,9 @@
     justify-content: space-around;
 }
 
-.botonComprarCompras,
-.botonSolicitarCompras,
-.botonHistorialCompras {
+.comprarPedido,
+.solicitarLlenado,
+.historialCompras {
   width: auto;
   color: var(--second-text-color);
   padding: 0.6rem .7rem;
@@ -63,19 +63,19 @@
   font-weight: 500;
 }
 
-.botonComprarCompras{
+.comprarPedido{
     background-color: var(--main-a-text-color);
 }
 
-.botonHistorialCompras{
+.historialCompras{
     background-color: var(--main-bg-color);
     border: 2px solid var(--button-main-bg);
     color: var(--main-text-color);
 }
 
-.botonComprarCompras:hover,
-.botonSolicitarCompras:hover,
-.botonHistorialCompras:hover{
+.comprarPedido:hover,
+.solicitarLlenado:hover,
+.historialCompras:hover{
   opacity: 0.9;
   border-radius: 40px;
 }
@@ -100,13 +100,10 @@
 /************************************************************/
 @media screen and (min-width: 600px) and (max-width: 1023px) {
     #miscomprasContainer{
-        /* border: 1px solid salmon; */
         padding: 0 2rem 0 3.5rem;
     }
     
     .tituloCompras{
-        /* padding: 1rem 0 .4rem 0;
-        color: var(--second-a-text-color); */
         font-size: 1.6rem;
         font-weight: 600;
     }
@@ -123,7 +120,6 @@
         width: 80px;            
         left: 100px;
         top: 190px;
-        /*position: absolute; */
     }
     
     .pFraseCompras{
@@ -131,65 +127,42 @@
     }
     
     .spanCompras{
-        /* color: var(--main-a-text-color); */
-        font-size: 2rem;
-        /* font-weight: 700; */
+        font-size: 2rem;        
     }
     
     .spanFraseCompras{
-        /* color: var(--main-text-color); */
         font-size: 1.7rem;
-        /* font-weight: initial; */
     }
     
     .buttonsComprasContainer{
-        /* border: 1px solid blueviolet; */
         margin: 2rem 0;
-        /* display: flex; */
-        /* justify-content: space-around; */
         width: 600px;
     }
     
-    .botonComprarCompras,
-    .botonSolicitarCompras,
-    .botonHistorialCompras {
-      /* width: auto; */
-      /* color: var(--second-text-color); */
+    .comprarPedido,
+    .solicitarLlenado,
+    .historialCompras {
       padding: 1rem 1.2rem;
-      /* background-color: var(--button-main-bg); */
-      /* border-color: var(--button-main-bg); */
-      /* cursor: pointer; */
       font-size: 1.2rem;
-      /* border: none; */
-      /* color: var(second-text-color); */
       border-radius: 10px;
       font-weight: 600;
     }
     
-    .botonComprarCompras{
-        /* background-color: var(--main-a-text-color); */
-    }
-    
-    .botonHistorialCompras{
-        /* background-color: var(--main-bg-color); */
+    .historialCompras{
         border: 2.5px solid var(--button-main-bg);
-        /* color: var(--main-text-color); */
     }
     
-    .botonComprarCompras:hover,
-    .botonSolicitarCompras:hover,
-    .botonHistorialCompras:hover{
-      /* opacity: 0.9; */
+    .comprarPedido:hover,
+    .solicitarLlenado:hover,
+    .historialCompras:hover{
       border-radius: 50px;
     }
     
     .leyendaCompras{
-        /* text-align: center; */
         padding: 1rem;
         margin-bottom: 2rem;
         font-size: 2.8rem;
         width: 600px;
-        /* color: var(--second-a-text-color); */
     }
     
     .pieCompras{
@@ -207,13 +180,10 @@
 
 @media screen and (min-width: 1024px){
     #miscomprasContainer{
-        /* border: 1px solid salmon; */
         padding: 0 8rem;
     }
     
     .tituloCompras{
-        /* padding: 1rem 0 .4rem 0;
-        color: var(--second-a-text-color); */
         font-size: 1.8rem;
         font-weight: 600;
     }
@@ -230,7 +200,6 @@
         width: 100px;            
         left: 355px;
         top: 215px;
-        /*position: absolute; */
     }
     
     .pFraseCompras{
@@ -238,65 +207,42 @@
     }
     
     .spanCompras{
-        /* color: var(--main-a-text-color); */
         font-size: 2rem;
-        /* font-weight: 700; */
     }
     
     .spanFraseCompras{
-        /* color: var(--main-text-color); */
         font-size: 1.7rem;
-        /* font-weight: initial; */
     }
     
     .buttonsComprasContainer{
-        /* border: 1px solid blueviolet; */
         margin: 2rem 0;
-        /* display: flex; */
-        /* justify-content: space-around; */
         width: 650px;
     }
     
-    .botonComprarCompras,
-    .botonSolicitarCompras,
-    .botonHistorialCompras {
-      /* width: auto; */
-      /* color: var(--second-text-color); */
+    .comprarPedido,
+    .solicitarLlenado,
+    .historialCompras {
       padding: 1rem 1.2rem;
-      /* background-color: var(--button-main-bg); */
-      /* border-color: var(--button-main-bg); */
-      /* cursor: pointer; */
       font-size: 1.2rem;
-      /* border: none; */
-      /* color: var(second-text-color); */
       border-radius: 10px;
       font-weight: 600;
     }
     
-    .botonComprarCompras{
-        /* background-color: var(--main-a-text-color); */
-    }
-    
-    .botonHistorialCompras{
-        /* background-color: var(--main-bg-color); */
+    .historialCompras{
         border: 3px solid var(--button-main-bg);
-        /* color: var(--main-text-color); */
     }
     
-    .botonComprarCompras:hover,
-    .botonSolicitarCompras:hover,
-    .botonHistorialCompras:hover{
-      /* opacity: 0.9; */
+    .comprarPedido:hover,
+    .solicitarLlenado:hover,
+    .historialCompras:hover{
       border-radius: 60px;
     }
     
     .leyendaCompras{
-        /* text-align: center; */
         padding: 1rem;
         margin-bottom: 2rem;
         font-size: 3rem;
         width: 650px;
-        /* color: var(--second-a-text-color); */
     }
     
     .pieCompras{

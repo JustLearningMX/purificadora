@@ -21,13 +21,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'nombreUsuario'
+        name: 'nombre'
     }
     ]);
     const inputNombre = crearElemento('input', [
         {
             type: 'name', 
-            name: 'nombreUsuario'
+            name: 'nombre'
         },
         {
             type: 'class', 
@@ -48,13 +48,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'apellidoUsuario'
+        name: 'apellidos'
     }
     ]);
     const inputApellidos = crearElemento('input', [
         {
             type: 'name', 
-            name: 'apellidoUsuario'
+            name: 'apellidos'
         },
         {
             type: 'class', 
@@ -75,13 +75,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'tipoUsuario'
+        name: 'tipo'
     }
     ]);
     const inputTipo = crearElemento('input', [
         {
             type: 'name', 
-            name: 'tipoUsuario'
+            name: 'tipo'
         },
         {
             type: 'class', 
@@ -102,13 +102,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'emailUsuario'
+        name: 'email'
     }
     ]);
     const inputEmail = crearElemento('input', [
         {
             type: 'name', 
-            name: 'emailUsuario'
+            name: 'email'
         },
         {
             type: 'class', 
@@ -129,13 +129,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'celularUsuario'
+        name: 'telefono'
     }
     ]);
     const inputCelular = crearElemento('input', [
         {
             type: 'name', 
-            name: 'celularUsuario'
+            name: 'telefono'
         },
         {
             type: 'class', 
@@ -156,13 +156,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'direccionUsuario'
+        name: 'direccion'
     }
     ]);
     const inputDireccion = crearElemento('input', [
         {
             type: 'name', 
-            name: 'direccionUsuario'
+            name: 'direccion'
         },
         {
             type: 'class', 
@@ -183,13 +183,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'ciudadUsuario'
+        name: 'ciudad'
     }
     ]);
     const inputCiudad = crearElemento('input', [
         {
             type: 'name', 
-            name: 'ciudadUsuario'
+            name: 'ciudad'
         },
         {
             type: 'class', 
@@ -210,13 +210,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'estadoUsuario'
+        name: 'estado'
     }
     ]);
     const inputEstado = crearElemento('input', [
         {
             type: 'name', 
-            name: 'estadoUsuario'
+            name: 'estado'
         },
         {
             type: 'class', 
@@ -237,13 +237,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'cpUsuario'
+        name: 'cp'
     }
     ]);
     const inputCp = crearElemento('input', [
         {
             type: 'name', 
-            name: 'cpUsuario'
+            name: 'cp'
         },
         {
             type: 'class', 
@@ -264,13 +264,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'rfcUsuario'
+        name: 'rfc'
     }
     ]);
     const inputRfc = crearElemento('input', [
         {
             type: 'name', 
-            name: 'rfcUsuario'
+            name: 'rfc'
         },
         {
             type: 'class', 
@@ -291,13 +291,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'emailRecuperacionUsuario'
+        name: 'emailRecuperacion'
     }
     ]);
     const inputEmailRecuperacion = crearElemento('input', [
         {
             type: 'name', 
-            name: 'emailRecuperacionUsuario'
+            name: 'emailRecuperacion'
         },
         {
             type: 'class', 
@@ -318,13 +318,13 @@ const crearDashboard = ()=>{
         name: 'label'
     },{
         type: 'for',
-        name: 'telefonoSecundarioUsuario'
+        name: 'telefonoRecuperacion'
     }
     ]);
     const inputTelefonoSecundario = crearElemento('input', [
         {
             type: 'name', 
-            name: 'telefonoSecundarioUsuario'
+            name: 'telefonoRecuperacion'
         },
         {
             type: 'class', 
@@ -341,6 +341,8 @@ const crearDashboard = ()=>{
     ]);
 
     const divBoton = crearElemento('div', [{type: 'class', name: 'divBotonesDashboard'}]);
+    const divBotonUpdate = crearElemento('div', [{type: 'id', name: 'buttonContainer'},{type: 'class', name: 'btnUpdate'}]);
+    const divBotonDelete = crearElemento('div', [{type: 'id', name: 'buttonContainer'},{type: 'class', name: 'btnDelete'}]);
     const updateBoton = crearElemento('input', [
         {
             type: 'id', 
@@ -356,7 +358,7 @@ const crearDashboard = ()=>{
         },
         {
         type: 'value', 
-        name: 'Actualizar datos'
+        name: 'Actualizar'
         }
     ]);
     const deleteBoton = crearElemento('input', [
@@ -374,7 +376,7 @@ const crearDashboard = ()=>{
         },
         {
         type: 'value', 
-        name: 'Eliminar cuenta'
+        name: 'Eliminar'
         }
     ]);
 
@@ -398,6 +400,7 @@ const crearDashboard = ()=>{
 
     //Revisamos si /config/usuario.js --> usuarios.datos tiene 
     //datos para ponerlos en los inputs correspondientes
+    
     if(usuario.datos){
         inputNombre.value = usuario.datos.nombre;
         inputApellidos.value = usuario.datos.apellidos;
@@ -415,7 +418,7 @@ const crearDashboard = ()=>{
         if(usuario.datos.cp)
             inputCp.value = usuario.datos.cp;
         if(usuario.datos.rfc)
-            inputRfc.value = usuario.datos.rfc;
+            inputRfc.value = usuario.datos.rfc.toUpperCase();
 
         if(usuario.datos.emailRecuperacion)
             inputEmailRecuperacion.value = usuario.datos.emailRecuperacion;
@@ -424,8 +427,11 @@ const crearDashboard = ()=>{
     }
 
     //Anexamos nodos hijos en orden
-    divBoton.appendChild(updateBoton);
-    divBoton.appendChild(deleteBoton);
+    divBotonUpdate.appendChild(updateBoton);
+    divBotonDelete.appendChild(deleteBoton);
+
+    divBoton.appendChild(divBotonUpdate);
+    divBoton.appendChild(divBotonDelete);
     
     divDatosCuenta.appendChild(labelNombre);
     divDatosCuenta.appendChild(inputNombre);

@@ -6,3 +6,15 @@
     justify-content: center; */
     /* border: 1px solid crimson; */
 }
+
+.divErrorMain{
+    display: none;    
+}
+
+.divErrorMainMostrar{
+    display: block;
+    border: 1px solid crimson;
+    color: crimson;
+    font-size: .7rem;
+    padding: 8px;
+}

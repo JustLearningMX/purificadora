@@ -4,7 +4,7 @@
 const navToggle = document.querySelector(".header-icon-menu"); //Icono de menu hamburguesa
 const navMenu = document.querySelector(".menu"); //Array de las opciones del menu
 
-import { controladorMenuMain } from '../config/menuMain.js'
+import { controladorMenuMain } from '../../config/menuMain.js'
 
 const abrirCerrarMenu = ()=>{
     navMenu.classList.toggle("nav-menu_visible");//Agrega la clase para mostrar el menu

@@ -15,19 +15,20 @@
     <link rel="stylesheet" href="./source/css/main.css">
     <link rel="stylesheet" href="./source/css/footer.css">
     <link rel="stylesheet" href="./source/css/formulario.css">
-    <link rel="stylesheet" href="./source/css/spinner.css">
-    <link rel="stylesheet" href="./source/css/logout.css">
+    <link rel="stylesheet" href="./source/css/spinner.css">    
     <link rel="stylesheet" href="./source/css/miscompras.css">
     <link rel="stylesheet" href="./source/css/dashboard.css">
+    <link rel="stylesheet" href="./source/css/logout.css">
 
     <!-- Se importan los MÓDULOS JS necesarios -->
     <script type="module" src="./source/config/usuario.js"></script>
     <script type="module" src="./source/config/menuMain.js"></script>
 
-    <script type="module" src="./source/js/menuUserOpt.js"></script>
-    <script type="module" src="./source/js/menuMainOpt.js"></script>
+    <script type="module" src="./source/js/menus/menuUserOpt.js"></script>
+    <script type="module" src="./source/js/menus/menuMainOpt.js"></script>
     <script type="module" src="./source/js/validacionesLogin.js"></script>
     <script type="module" src="./source/js/validacionesSignup.js"></script>
+    <script type="module" src="./source/js/listenersBotones.js"></script>
 
     <script type="module" src="./source/components/footer.js"></script>
     <!-- <script type="module" src="./source/components/spinner.js"></script>
@@ -42,10 +43,10 @@
     <script type="module" src="./source/utils/mostrarErrorCampo.js"></script>
 
     <!-- Script para el menú de hamburguesa -->
-    <script defer type="module" src="./source/js/menuMainEvents.js"></script>
+    <script defer type="module" src="./source/js/menus/menuMainEvents.js"></script>
 
     <!-- Script para el menú de Usuario -->
-    <script defer type="module" src="./source/js/menuUserEvents.js"></script>    
+    <script defer type="module" src="./source/js/menus/menuUserEvents.js"></script>    
 
 </head>
 <body>
@@ -65,9 +66,15 @@
             </ul>
         </div>
     </nav>
+    
+    <div class="divMensajesGeneral">
+        <div class="cerrar">
+            x
+        </div>
+    </div>
 
     <!-- Sección principal -->
-    <main id="main">
+    <main id="main">        
         <script type="module">
             import { mostrarSeccionNosotros } from './source/components/nosotros.js';
             import { mostrarMisCompras } from './source/components/miscompras.js';

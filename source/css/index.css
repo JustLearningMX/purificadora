@@ -34,7 +34,7 @@ html {
 
   input:focus {
     border: 1px solid green;
-  } */
+  }
 
   #input-button:focus {
     border: none;
@@ -50,8 +50,39 @@ html {
       Diseño Mobile-First*/
     grid-template:
       "header navbar" 80px
+      "mensajes mensajes" auto
       "main   main" 1fr
       "footer footer" auto / 1fr .3fr;
+  }
+
+  .divMensajesGeneral{
+    grid-area: mensajes;
+    border: 1px solid #B4FF9F;
+    color:  #4E944F;
+    font-weight: 500;
+    margin: 0 2rem;
+    border-radius: 3px;
+    padding: 5px 1rem;
+    font-size: .9rem;
+    position: relative;
+    display: none;
+  }
+
+  .divMensajesGeneralMostrar{
+    display: block;
+  }
+
+  .divMensajesGeneral > p{
+    margin: 0 3rem;
+  }
+
+  .cerrar{
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    /* color: var(--main-a-text-color); */
+    font-size: 1.1rem;
+    font-weight: 500;
   }
   
   /*A los links se le quitan el subrayado*/
@@ -75,6 +106,7 @@ html {
     body {
       grid-template:
         "header header" 110px
+        "mensajes   mensajes" auto
         "navbar   main" 1fr
         "footer footer" auto / .2fr 1.2fr;
     }

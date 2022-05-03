@@ -4,7 +4,7 @@
 
 
 //Obtenemos si un usuario ya está logueado
-import { usuario } from '../config/usuario.js';
+import { usuario } from '../../config/usuario.js';
 
 //Obtenemos nodo del submenú usuario en el Navbar
 const subMenuUser = document.querySelector('.subMenuUser');

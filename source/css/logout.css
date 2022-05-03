@@ -30,16 +30,16 @@
     color: var(--main-a-text-color);
 }
 
+.submittButtonSalir:hover{
+    opacity: 0.8;
+    border-radius: 40px;
+}
+
 .buttonAwaiting{
     background-color: #dedddd;
     color: var(--third-text-color);
     cursor: auto;
-  }
-
-.submittButtonSalir:hover{
-    opacity: 0.8;
-    border-radius: 40px;
-  }
+}
 
 
 
