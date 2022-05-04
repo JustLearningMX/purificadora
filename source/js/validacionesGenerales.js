@@ -35,3 +35,8 @@ export const passwordValido = (password) => {
 export const compararDosPass = (password, password2) => {
     return password !== password2 ? false : true;
 };
+
+//Retorna false si el código postal no tiene 5 dígitos (MX)
+export const cpValido = (cp) => {
+    return cp.length !== 5 ? false : true;
+};

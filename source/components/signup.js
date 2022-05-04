@@ -236,7 +236,7 @@ document.addEventListener("click", (event) =>{
         
         //Obtenemos el botón y adjuntamos el spinner
         const botonContenedor = document.querySelector('#buttonContainer');
-        const spinnerElement = agregarSpinner(botonContenedor);
+        const spinnerElement = agregarSpinner(botonContenedor, 2);
         spinnerElement.style.left = '80%';
 
         //Deshabilitamos el botón

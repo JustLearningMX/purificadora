@@ -58,4 +58,20 @@ export async function requestApi(path, req, arrBody, token) {
     //Retornamos los datos recibidos de la petición
     return await resultado.json();
   }
+  else if(req === "DELETE")
+  {
+      // usuario: arrUsuario ? JSON.stringify(arrUsuario) : null,
+    const resultado = await fetch(API + path, {
+      //Se concatena api y path
+      mode: "cors",
+      method: req, //tipo de petición
+      headers: new Headers({
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",        
+        "Authorization": token,
+      }),
+    }); 
+    //Retornamos los datos recibidos de la petición
+    return await resultado.json();
+  }
 } 

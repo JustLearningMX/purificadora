@@ -4,15 +4,16 @@
  */
 
 import { updateUsuario } from '../js/peticiones/updateUsuario.js';
+import { confirmarDeleteUsuario } from '../js/peticiones/deleteUsuario.js';
 import { cerrarMensajeGeneral } from '../utils/mensajeGeneral.js';
 
 const evento = {
-    //Botones en "Mis compras"
+    //Botones en "Dashboard"
     updateUsuario: (boton) => updateUsuario(boton),
-    deleteUsuario: () => alert('Eliminó el usuario'),
+    deleteUsuario: () => confirmarDeleteUsuario(),
     cambiarPassUsuario: () => alert('Cambió el password del usuario'),
 
-    //Botones en Usuarios
+    //Botones en "Mis compras"
     comprarPedido: () => alert('Solicitó una compra'),
     solicitarLlenado: () => alert('Eliminó el usuario'),
     historialCompras: () => alert('Cambió el password del usuario'),
@@ -24,7 +25,7 @@ const evento = {
 
 window.addEventListener("click", (event) =>{
     const boton = event.composedPath()[0];
-    // console.log(boton);
+
     boton.classList.contains('updateButton') ? evento['updateUsuario'](boton) :
     boton.classList.contains('deleteButton') ? evento['deleteUsuario']() :
     boton.classList.contains('linkCambiarPass') ? evento['cambiarPassUsuario']() :

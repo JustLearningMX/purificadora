@@ -28,3 +28,8 @@ export function actualizarLocalStorage(dataUsuario) {
 
     actualizarUsuario();
 }
+
+export function deleteLocalStorage() {
+    window.localStorage.removeItem('usuarioLogueadoPurificadora');
+    window.localStorage.removeItem('usuarioDatos');
+}

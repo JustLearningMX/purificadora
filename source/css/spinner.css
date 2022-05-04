@@ -4,7 +4,7 @@
 }
 
 .spinnerImage{
-    width: var(--size-spinner);
+    width: calc( var(--size-spinner) * 12px );
     animation: spinner 1s linear infinite;
 }
 

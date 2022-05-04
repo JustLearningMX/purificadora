@@ -10,6 +10,7 @@ export function mostrarError(mensaje, isFirstTime, boton, form) {
     const botonContenedor = document.querySelector('#buttonContainer');
 
     p.textContent = mensaje;
+    const isUnBoton = !boton.length ? true : false;
     
     if(isFirstTime){
         botonContenedor.removeChild(botonContenedor.children[1]); //Removemos el spinner
@@ -17,7 +18,7 @@ export function mostrarError(mensaje, isFirstTime, boton, form) {
         if(!div.classList.contains('errorCampoMostrar'))
             div.classList.toggle("errorCampoMostrar");
         
-        if(boton && (typeof boton !== 'object' )) {
+        if(boton && isUnBoton) {
             boton.value = form; //Cambiamos el texto del botón
             boton.disabled = false; //Habilitamos el botón
             boton.classList.toggle("buttonAwaiting"); //Quitamos CSS al botón habilitado
@@ -31,5 +32,7 @@ export function mostrarError(mensaje, isFirstTime, boton, form) {
     }
 
     div.appendChild(p);
-
+    
+    //Mover al inicio de la pantalla
+    window.scrollTo(0, 0);
 }

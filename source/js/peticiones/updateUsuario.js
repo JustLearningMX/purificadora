@@ -6,7 +6,7 @@
  import { requestApi } from '../../utils/httpClient.js';
  import { colocarMensaje, mostrarErrorGeneral } from '../../utils/mensajeGeneral.js';
  import { mostrarError } from '../../utils/mostrarErrorCampo.js';
- import { rfcConHomoclave, emailValido, telefonoDiezDigitos } from '../../js/validacionesGenerales.js';
+ import { rfcConHomoclave, emailValido, telefonoDiezDigitos, cpValido } from '../../js/validacionesGenerales.js';
  import { agregarSpinner } from '../../utils/agregarSpinner.js';
  import { usuario } from '../../config/usuario.js';
  import { actualizarLocalStorage } from '../../utils/localStorage.js'
@@ -31,8 +31,8 @@
 
     //Obtenemos el contenedor del botón, y lo enviamos para ponerle el spinner
     const botonContenedor = document.querySelectorAll('#buttonContainer');
-    const spinnerElement = agregarSpinner(botonContenedor[0]);
-    spinnerElement.style.left = '74%';
+    const spinnerElement = agregarSpinner(botonContenedor[0], 1.5);
+    spinnerElement.style.left = '76%';
 
     //Deshabilitamos ambos botones
     btnUpdate.value = 'Espere'; //Cambiamos el texto del botón
@@ -56,9 +56,7 @@
         if(valor)
             body[clave] = valor;
     }
-    
     return body;
-
  };
 
 //3. Validamos los campos que el usuario desea modificar
@@ -94,11 +92,34 @@
         error = true;
     }
 
+    //CP correcto 5 números
+    if(campos.cp && !cpValido(campos.cp) ){
+        mostrarError('* El CP debe ser de 5 dígitos', isFirstTime, boton, ['Actualizar', 'Eliminar']);
+        isFirstTime = false;
+        error = true;
+    }
+
+    //Email de recuperación correcto
+    if(campos.emailRecuperacion && !emailValido(campos.emailRecuperacion) ){
+        mostrarError('* El email de recuperación debe incluir un @ y un dominio .com, .net, etc.', isFirstTime, boton, ['Actualizar', 'Eliminar']);
+        isFirstTime = false;
+        error = true;
+    }
+
+    //Telefono secundario correcto 10 números
+    if(campos.telefonoRecuperacion && !telefonoDiezDigitos(campos.telefonoRecuperacion) ){
+        mostrarError('* Teléfono secundario debe ser de 10 dígitos', isFirstTime, boton, ['Actualizar', 'Eliminar']);
+        isFirstTime = false;
+        error = true;
+    }
+
     return error;
  };
 
  //Función que ejecuta la actualización de datos del usuario a la BD
  export async function updateUsuario(boton) {
+
+     //Hay que deshabilitar los notones que se encuentren en la vista
      const btnDelete = document.querySelector('.deleteButton');
      const arrBotones = [boton, btnDelete];
 
@@ -109,36 +130,41 @@
      const objetoConCampos = obtenerCampos();
      
      //3. Validar los valores
-     const body = validarCampos(objetoConCampos, arrBotones) ? null : objetoConCampos;     
-     
+     const body = validarCampos(objetoConCampos, arrBotones) ? null : objetoConCampos;
+
      //4. Petición al backend de la BD
-     try {                            
- 
-         boton.value = 'Conectando'; //Cambiamos el texto del botón
+     if(body){
+        try {                            
+            // boton.value = 'Conectando'; //Cambiamos el texto del botón
+   
+            //Obtenemos los datos del Usuario para guardalos en /config/usuario.js --> usuario.datos
+            const tokenUsuario = 'Bearer ' + usuario.token;
+   
+            //Petición al endpoint que actualiza los datos
+            const data = await requestApi('/usuarios/update', 'PUT', body, tokenUsuario);
+   
+            if(data.error) { //Si hubo un error
+               mostrarErrorGeneral(`Hubo un error: ${data.error}`);
+            } else { //Si todo salió bien 
+   
+               //Actualizamos los datos
+               actualizarLocalStorage(data);
+   
+               //Mover al inicio de la pantalla
+               window.scrollTo(0, 0);
+   
+               colocarMensaje('¡Actualización exitosa!');
+   
+               //Recargamos el componente
+               mostrarDashboard();
+            }
+        } catch (error) { //Error en la BD
+           boton.value = 'Actualizar'; //Cambiamos el texto del botón
 
-         //Obtenemos los datos del Usuario para guardalos en /config/usuario.js --> usuario.datos
-         const tokenUsuario = 'Bearer ' + usuario.token;
+           //Mover al inicio de la pantalla
+           window.scrollTo(0, 0);
 
-         //Petición al endpoint que actualiza los datos
-         const data = await requestApi('/usuarios/update', 'PUT', body, tokenUsuario);
- 
-         if(data.error) { //Si hubo un error
-             mostrarErrorGeneral('Hubo un error: ', data.error);
-
-         } else { //Si todo salió bien 
-
-            //Actualizamos los datos
-            actualizarLocalStorage(data);
-
-            //Mover al inicio de la pantalla
-            window.scrollTo(0, 0);
-
-            colocarMensaje('¡Actualización exitosa!');
-
-            //Recargamos el componente
-            mostrarDashboard();
-         }
-     } catch (error) { //Error en la BD
-        mostrarErrorGeneral('Hubo un error: ', error);        
-     }
+           mostrarErrorGeneral(`Hubo un error: ${error}`);        
+        }
+     }     
  }

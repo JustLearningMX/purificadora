@@ -155,7 +155,7 @@ document.addEventListener("click", (event) =>{
 
         //Obtenemos el contenedor del botón, y lo enviamos para ponerle el spinner
         const botonContenedor = document.querySelector('#buttonContainer');
-        const spinnerElement = agregarSpinner(botonContenedor);
+        const spinnerElement = agregarSpinner(botonContenedor, 2);
         spinnerElement.style.left = '80%';
 
         //Deshabilitamos el botón
@@ -163,7 +163,6 @@ document.addEventListener("click", (event) =>{
         boton.value = 'Validando datos'; //Cambiamos el texto del botón
         boton.disabled = true; //Deshabilitamos el botón
         boton.classList.toggle("buttonAwaiting"); //Agregamos CSS al botón ya deshabilitado
-        
         validandoLogin(event, telefono, password, boton);
     }
 

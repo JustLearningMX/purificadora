@@ -72,7 +72,7 @@ document.addEventListener('click', (event)=>{
 
       //Obtenemos el contenedor del botón, y lo enviamos para ponerle el spinner
       const botonContenedor = document.querySelector('#buttonContainer');
-      const spinnerElement = agregarSpinner(botonContenedor);
+      const spinnerElement = agregarSpinner(botonContenedor, 2);
 
       spinnerElement.style.left = '80%';
 
