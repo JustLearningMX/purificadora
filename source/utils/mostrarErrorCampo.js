@@ -8,6 +8,7 @@ export function mostrarError(mensaje, isFirstTime, boton, form) {
     const p = crearElemento('p');
     const div = document.querySelector('.errorCampoOcultar');
     const botonContenedor = document.querySelector('#buttonContainer');
+    console.log(mensaje)
 
     p.textContent = mensaje;
     const isUnBoton = !boton.length ? true : false;
@@ -15,8 +16,10 @@ export function mostrarError(mensaje, isFirstTime, boton, form) {
     if(isFirstTime){
         botonContenedor.removeChild(botonContenedor.children[1]); //Removemos el spinner
 
-        if(!div.classList.contains('errorCampoMostrar'))
+        if(!div.classList.contains('errorCampoMostrar')){
+            
             div.classList.toggle("errorCampoMostrar");
+        }
         
         if(boton && isUnBoton) {
             boton.value = form; //Cambiamos el texto del botón

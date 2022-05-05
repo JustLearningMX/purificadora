@@ -1,4 +1,4 @@
-.divBotonesEliminar{    
+.divBotonesConfirmar{    
     /* border: 1px solid green;       */
     margin: 40px 0 0 0;
     display: flex;
@@ -41,7 +41,7 @@
 /************************************************************/
 /************************************************************/
 @media screen and (min-width: 600px){      
-    .divBotonesEliminar{    
+    .divBotonesConfirmar{    
         margin: 50px 0 0 0;
         width: 100%;
     }

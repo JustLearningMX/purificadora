@@ -4,7 +4,7 @@
  */
 import { requestApi } from '../../utils/httpClient.js';
 import { colocarMensaje, mostrarErrorGeneral } from '../../utils/mensajeGeneral.js';
-import { mostrarEliminar } from '../../components/eliminar.js';
+import { mostrarConfirmar } from '../../components/eliminar.js';
 import { agregarSpinner } from '../../utils/agregarSpinner.js';
 import { usuario } from '../../config/usuario.js';
 import { deleteLocalStorage } from '../../utils/localStorage.js'
@@ -76,5 +76,5 @@ const cancelar = () => {
 
 //Función que confirma la eliminación total de datos del usuario a la BD
 export function confirmarDeleteUsuario() {
-    mostrarEliminar('¿Confirma que desea eliminar su cuenta?', deleteUsuario, cancelar);             
+    mostrarConfirmar('¿Confirma que desea eliminar su cuenta?', deleteUsuario, cancelar);             
 }

@@ -17,6 +17,8 @@ export function colocarMensaje(mensaje){//, isFirstTime, boton, form) {
 }
 
 export function mostrarErrorGeneral(mensaje) {
+    cerrarMensajeGeneral();
+    
     const p = crearElemento('p');
     const divMensaje = document.querySelector('.divMensajesGeneral');
     divMensaje.style.border= '1px solid crimson';

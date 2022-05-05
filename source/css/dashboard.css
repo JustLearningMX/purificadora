@@ -22,7 +22,7 @@
   }
 
   .divCambiarPass{
-    grid-area: password;    
+    grid-area: password;
   }
 
   .divDatosPersonales{
@@ -70,9 +70,9 @@
 }
 
 .linkCambiarPass{
-    font-size: 1.1rem;
-    color: var(--second-a-text-color);
-    cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--second-a-text-color);
+  cursor: pointer;
 }
 
 .linkCambiarPass:hover{
@@ -134,13 +134,17 @@
     .divDatosDashboard{
         font-size: 1.4rem;
     }
+
+    .divCambiarPass{
+      display: flex;
+      justify-content: center;
+    }
     
     .input-dashboard{
         font-size: 1.1rem;
     }
     
     .linkCambiarPass{
-        margin-top: 20px;
         font-size: 1.3rem;
     }
     

@@ -22,7 +22,7 @@ export function validandoSignup(e, nombre, apellidos, telefono, email, password,
         isFirstTime = false;
     }
     
-    if(!email.match(patronRgxEmail)){
+    if(!email.match(patronRgxEmail)){        
         mostrarError('* El email debe incluir un @ y un dominio .com, .net, etc.', isFirstTime, boton, 'Registrar');
         isFirstTime = false;
     }
@@ -36,7 +36,9 @@ export function validandoSignup(e, nombre, apellidos, telefono, email, password,
         mostrarError('* Passwords no coinciden. Deben ser iguales', isFirstTime, boton, 'Registrar');
         isFirstTime = false;
     }
-     else {
+    
+    //Si no hubo un error
+    if(isFirstTime) { 
 
         //Ocultamos la caja de mensajes de advertencia
         const div = document.querySelector('.errorCampoOcultar');
@@ -70,7 +72,7 @@ export function validandoSignup(e, nombre, apellidos, telefono, email, password,
             })
             .catch((error)=>{
                 // console.log('Hubo un error: ', error);
-                mostrarError('Error en la aplicación. Intente más tarde', isFirstTime, boton, 'Registrar');
+                mostrarError(`Error en la aplicación. Intente más tarde ${error}`, isFirstTime, boton, 'Registrar');
             });
     }   
 };

@@ -5,13 +5,14 @@
 
 import { updateUsuario } from '../js/peticiones/updateUsuario.js';
 import { confirmarDeleteUsuario } from '../js/peticiones/deleteUsuario.js';
+import { confirmarCambiarPassword } from '../js/peticiones/cambiarPassword.js';
 import { cerrarMensajeGeneral } from '../utils/mensajeGeneral.js';
 
 const evento = {
     //Botones en "Dashboard"
     updateUsuario: (boton) => updateUsuario(boton),
     deleteUsuario: () => confirmarDeleteUsuario(),
-    cambiarPassUsuario: () => alert('Cambió el password del usuario'),
+    cambiarPassUsuario: () => confirmarCambiarPassword(),
 
     //Botones en "Mis compras"
     comprarPedido: () => alert('Solicitó una compra'),

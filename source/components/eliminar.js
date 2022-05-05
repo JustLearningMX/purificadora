@@ -1,17 +1,19 @@
 /**
- * DIBUJA UNA VISTA PARA QUE EL USUARIO PROCEDA A ELIMINAR (SU CUENTA O ALGO MÁS)
+ * DIBUJA UNA VISTA PARA QUE EL USUARIO 
+ * CONFIRME UNA ACCIÓN (ELIMINAR SU CUENTA
+ * CAMBIAR CONTRASEÑA, ETC.)
  */
 
 //Crea elemento o nodo HTML
 import { crearElemento } from '../utils/crearNodos.js';
 
 //Se crean elementos para el componente Eliminar
-const crearSecciónEliminar = (mensaje)=>{
+const crearSecciónConfirmar = (mensaje)=>{
 
     //Se crean los Nodos que se ocuparán llamando la función crearElemento()
     const section = crearElemento('section', [{type: 'id', name: 'sectionSalir'}]); //sectionSalir
     const p = crearElemento('p', [{type: 'class', name: 'textoSalir'}]);
-    const divBoton = crearElemento('div', [{type: 'class', name: 'divBotonesEliminar'}]);
+    const divBoton = crearElemento('div', [{type: 'class', name: 'divBotonesConfirmar'}]);
     const divBotonConfirmar = crearElemento('div', [{type: 'id', name: 'buttonContainer'},{type: 'class', name: 'divBtnConfirmar'}]);
     const btnConfirmarEliminar = crearElemento('input', [
         {
@@ -67,7 +69,7 @@ const crearSecciónEliminar = (mensaje)=>{
 }
 
 //Se muestra el componente
-export function mostrarEliminar(mensaje, eliminar, cancelar) {
+export function mostrarConfirmar(mensaje, eliminar, cancelar) {
     const main = document.querySelector('#main');
 
     //Borramos los nodos hijos del main
@@ -76,7 +78,7 @@ export function mostrarEliminar(mensaje, eliminar, cancelar) {
     }
 
     //Anexamos la sección Eliminar al Main del index.html
-    main.appendChild(crearSecciónEliminar(mensaje));
+    main.appendChild(crearSecciónConfirmar(mensaje));
 
     //Obtenemos los dos botones
     const botonEliminar = document.querySelector('.btnConfirmarEliminar');
