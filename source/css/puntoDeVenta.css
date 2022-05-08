@@ -1,16 +1,10 @@
-#main{
-    /* border: 1px solid blue; */
-    /* height: 100%; */
-}
-
 #puntoDeVentaContainer{
-    min-height: 100%;
-    /* border: 1px solid green; */
+    min-height: 100%;    
     display: grid;
     grid-template:     
-    "busqueda busqueda" 50px
-    "productos carrito" 1fr
-    "resumen resumen" .7fr / 120px 1fr;
+    "busqueda busqueda" 90px
+    "productos carrito" .8fr
+    "resumen resumen" 1fr / 1fr .3fr;
 }
 
 .containersVentas{
@@ -26,12 +20,25 @@
     padding-left: 10px;
 }
 
+/* Estilos para el buscador*/
 #searchContainer{
     /* border: 1px solid red; */
     grid-area: busqueda;    
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.labelcliente{
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    font-weight: 400;
+    line-height: 35px;
+    color: var(--main-a-text-color);
+    font-size: 1.2rem;
 }
 
 /*ESTILOS DE LA SECCIÓN DE LOS PRODUCTOS*/
@@ -40,12 +47,17 @@
     grid-area: productos;
     font-size: .6rem;
     text-align: center;
+    padding: 10px 5px;
+    /* display: grid;
+    justify-content: center; */
+    overflow-y: auto;
 }
 
 .productosContainer{
+    /* border: 1px solid blue; */
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+    gap: 7px;    
 }
 
 .itemProductos{
@@ -69,8 +81,8 @@
 
 .agregarProducto,
 .quitarProducto{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border: none;
     background-color: #28a745;
     font-weight: 400;
@@ -98,7 +110,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     border-radius: 10px;
 }
 
@@ -112,7 +124,7 @@
     height: 25px;
     border-radius: 5px;
     padding: 0 5px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .inputsCarrito{
@@ -124,6 +136,7 @@
 .botonPagar{
     width: 100%;
     color: var(--second-text-color);
+    margin-top: 20px;
     padding: 0.9rem;
     background-color: var(--button-main-bg);
     border-color: var(--button-main-bg);
@@ -144,8 +157,7 @@
     border-radius: 10px;
     padding: 0;
     margin: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .tablaListaCompras{
@@ -159,6 +171,191 @@
 .encabezadoItem,
 .encabezadoDescripcion,
 .encabezadoPrecio{
-    /* border: 1px solid green; */
     text-align: center;
+}
+
+
+/***********************************************
+*** Tablets y Laptops/Computadoras --> 600px + *
+************************************************/
+@media screen and (min-width: 600px){ 
+    #puntoDeVentaContainer{
+        /* min-height: 100%;     */
+        /* display: grid; */
+        grid-template:     
+        "busqueda busqueda busqueda" 90px
+        "productos resumen carrito" 350px / .4fr .8fr .5fr;
+        /* "resumen resumen" .6fr / 1fr 1fr .3fr; */
+    }
+    
+    .containersVentas{
+        /* padding: 3px; */
+    }
+    
+    .inputsVentas {
+        height: 45px;
+        /* width: 100%; */
+        /* border-radius: 0.25rem; */
+        /* color: var(--main-text-color); */
+        /* border: 1px solid #ced4da; */
+        /* padding-left: 15px; */
+    }
+    
+    /* Estilos para el buscador*/
+    #searchContainer{
+        grid-area: busqueda;    
+        /* display: flex; */
+        flex-direction: row;
+        /* justify-content: center;
+        align-items: center; */
+    }
+    
+    .labelcliente{
+        /* border: 1px solid green; */
+        /* width: 100%; */
+        /* height: 35px; */
+        margin-top: 0;
+        font-weight: 500;
+        /* line-height: 35px; */
+        padding-left: 20px;
+    }
+
+    .buscador{
+        width: 40%;
+    }
+    
+    /*ESTILOS DE LA SECCIÓN DE LOS PRODUCTOS*/
+    #listaDeProductosContainer{
+        /* border: 1px solid orchid;
+        grid-area: productos;
+        font-size: .6rem;
+        text-align: center;
+        padding: 10px 5px; */
+    }
+    
+    .productosContainer{
+        /* border: 1px solid blue; */
+        /* display: grid; */
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px;
+        /* overflow-y: auto; */
+    }
+    
+    .itemProductos{
+        /* list-style: none;
+        background-color: var(--second-a-text-color);
+        padding: 5px 3px;  
+        color: var(--second-text-color);
+        border-radius: 5px; */
+        font-size: 1rem;
+    }
+    
+    .nombreProducto{
+        font-size: 1.2rem;
+    }
+    
+    .divContarBotones{
+        /* display: flex;
+        justify-content: space-around; */
+        margin-top: 15px;
+    }
+    
+    .agregarProducto,
+    .quitarProducto{
+        width: 35px;
+        height: 35px;
+        /* border: none;
+        background-color: #28a745;
+        font-weight: 400;
+        color: var(--second-text-color);
+        border-radius: 3px;
+        cursor: pointer; */
+    }
+    
+    .quitarProducto{
+        /* background-color: #dc3545; */
+    }
+    
+    .itemProductos:hover{
+        /* opacity: 0.95; */
+    }
+    
+    .agregarProducto:hover,
+    .quitarProducto:hover{
+        /* opacity: 0.75; */
+    }
+    
+    #carritoDeComprasContainer{
+        /* border: 1px solid var(--second-a-text-color);
+        grid-area: carrito;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px; */
+    }
+    
+    .divSubtotal,
+    .divDescuento,
+    .divTotal{
+        /* display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        border-bottom: .13rem solid var(--border-color-form);
+        height: 25px;
+        border-radius: 5px;
+        padding: 0 5px; */
+        margin-bottom: 25px;
+    }
+    
+    .inputsCarrito{
+        /* width: 100px;
+        border: none;
+        text-align: end; */
+        font-size: 1.1rem;
+    }
+
+    .labelsPuntoDeVenta{
+        font-size: 1.2rem;
+    }
+    
+    .botonPagar{
+        /* width: 100%;
+        color: var(--second-text-color);
+        padding: 0.9rem;
+        background-color: var(--button-main-bg);
+        border-color: var(--button-main-bg);
+        cursor: pointer;
+        font-size: 1.3rem;
+        border: none;
+        color: var(--main-a-text-color); */
+      }
+      
+      .botonPagar:hover{
+        /* opacity: 0.9; */
+      }
+    
+    
+    #listaDeComprasContainer{
+        /* border-bottom: 1px solid var(--main-a-text-color);
+        grid-area: resumen;
+        border-radius: 10px;
+        padding: 0;
+        margin: 0;
+        overflow-y: auto;         */
+        font-size: 1.2rem;
+    }
+    
+    .tablaListaCompras{
+        /* width: 100%;
+        background-color: var(--main-a-text-color);
+        color: var(--second-text-color);
+        border: none;
+        border-radius: 10px 10px 0 0; */
+    }
+    
+    .encabezadoItem,
+    .encabezadoDescripcion,
+    .encabezadoPrecio{
+        /* text-align: center; */
+    }   
 }

@@ -12,6 +12,14 @@ function crearVentanaPuntoDeVenta(main) {
 
     //Sección para la búsqueda del cliente
     const sectionSearch = crearElemento('section', [{type: 'id', name: 'searchContainer'}, {type: 'class', name: 'containersVentas'}]);
+    const labelCliente = crearElemento('label', [{
+        type: 'class',
+        name: 'labelsPuntoDeVenta labelcliente'
+    },{
+        type: 'for',
+        name: 'buscador'
+    }
+    ]);
     const buscador = crearElemento('input', [
         {
             type: 'name', 
@@ -30,7 +38,7 @@ function crearVentanaPuntoDeVenta(main) {
             name: 'Ingrese número de teléfono'
         }
     ], null, true); //Not required, Autofocus
-    // sectionSearch.textContent= 'Search';
+    labelCliente.textContent= 'Cliente sin registrar';
 
     //Sección que muestra lo que el cliente lleva
     const sectionListaCompras = crearElemento('section', [{type: 'id', name: 'listaDeComprasContainer'}, {type: 'class', name: 'containersVentas'}]);
@@ -52,7 +60,8 @@ function crearVentanaPuntoDeVenta(main) {
     sectionListaCompras.appendChild(tablaListaCompras);
 
     //Sección que muestra los productos que se pueden vender
-    const sectionProductosDisponibles = crearElemento('section', [{type: 'id', name: 'listaDeProductosContainer'}, {type: 'class', name: 'containersVentas'}]);
+    const sectionProductosDisponibles = crearElemento('section', [{type: 'id', name: 'listaDeProductosContainer'}, 
+    {type: 'class', name: 'containersVentas'}]);
 
     const arrayDeProductos = [
         {
@@ -229,6 +238,7 @@ function crearVentanaPuntoDeVenta(main) {
 
     //Anexamos el input del search
     sectionSearch.appendChild(buscador);
+    sectionSearch.appendChild(labelCliente);
 
     //Anexamos los nodos principales
     puntoDeVentaContainer.appendChild(sectionSearch);
