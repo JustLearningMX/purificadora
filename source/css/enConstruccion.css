@@ -1,0 +1,40 @@
+#enConstruccionContainer{
+    /* border: 1px solid cornflowerblue; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+#enConstruccionContainer > .subTema{
+    color: var(--second-a-text-color);
+    font-size: 1.5rem;
+}
+
+.imgContainerConstruccion{
+    width: 330px;
+}
+
+.enConstruccionImg{
+    width: 330px;
+    height: 500px;
+    object-fit:cover;
+}
+
+/*Laptops/Computadoras --> 600px + */
+@media screen and (min-width: 600px){
+
+    #enConstruccionContainer > .subTema{
+        font-size: 2rem;
+    }
+
+    .imgContainerConstruccion{
+        width: 650px;
+    }
+
+    .enConstruccionImg{
+        width: 650px;
+        height: 650px;
+    }
+}

@@ -2,7 +2,7 @@ import { crearElemento } from '../utils/crearNodos.js';
 import { usuario } from '../config/usuario.js'
 
 //Se crean elementos para el componente Dashboard
-const crearDashboard = ()=>{
+const crearDashboard = (main)=>{
 
     //Se crean los Nodos que se ocuparán llamando la función crearElemento()
     const section = crearElemento('section', [{type: 'id', name: 'formularioDashboard'}]);

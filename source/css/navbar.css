@@ -2,7 +2,7 @@
     grid-area: navbar;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center;    
 }
 
 .navbar-icons{
@@ -12,7 +12,8 @@
 
 /* Menú principal */
 .menu{    
-    /* border: 1px solid crimson; */
+    border: 1px solid var(--button-main-bg);
+    border-radius: 10px;
     list-style: none;
     display: flex;
     /*align-items: center; Centra opcion del menú horizontalmente*/
@@ -23,11 +24,12 @@
     top: 80px; /*De acuerdo al alto del elemento anterior*/
     left: 100%;/*Opciones de menú fuera de pantalla*/
     transition: left 0.3s;
-    width: 60%; /*Que ocupe todo el ancho*/
+    width: 100%; /*Que ocupe todo el ancho*/
     height: auto; /*calc(70% - 80px); Ajusta el menú a la altura restante de la pantalla*/
     overflow-y: auto; /*Agrega scroll x si la pantalla supera el contenido*/
     color: var(--main-a-text-color);
     padding-bottom: 1rem;
+    z-index: 1;  
 }
 
 #menu-items {
@@ -42,7 +44,7 @@
     width: 100%;
     text-align: center;
     cursor: pointer;
-    padding: 0 5px;
+    padding: 0 15px;
 }
 
 .nav-link:hover,
@@ -64,24 +66,28 @@
 
 .subMenuUser{
     /* border: 1px solid crimson; */
+    border: 1px solid var(--second-bg-color);
+    border-radius: 10px;
     list-style: none;    
     background-color: var(--main-bg-color);
     position: fixed;
-    top: calc(80px - 50%); /*De acuerdo al alto del elemento anterior*/
-    left: 71%;/*Opciones de menú fuera de pantalla*/
+    top: 80px; /*De acuerdo al alto del elemento anterior calc(80px - 50%)*/
+    left: 100%;/*Opciones de menú fuera de pantalla*/
     transition: left 0.3s;
     width: auto; /*Ancho a ocupar*/
     height: auto; 
     overflow-y: auto; /*Agrega scroll x si la pantalla supera el contenido*/
     color: var(--main-a-text-color);
-    /* padding: 0 5px; */
+    z-index: 1;  
 }
 
 #menu-items-user {    
     line-height: 40px;
     font-size: 1.1rem;
     display: flex;
-    /* border: 1px solid crimson;     */
+    /* padding: 0 10px; */
+    /* border: 1px solid crimson; */
+    /* width: 100%; */
 }
   
 .menu-link-user {
@@ -97,7 +103,8 @@
 }
 
 .nav-menu-user_visible{
-    top: 80px;
+    /* top: 80px; */
+    left: 68%;
     transition: 0.3s;
 }
 
@@ -109,8 +116,8 @@
 
     /* Menú principal */
     .menu{
-        width: 40%; /*Que ocupe todo el ancho*/
-        height: calc(65% - 80px); /*Ajusta el menú a la altura restante de la pantalla*/
+        width: 50%; /* Que ocupe todo el ancho */
+        /* height: auto; Ajusta el menú a la altura restante de la pantalla */
         overflow-y: hidden;
     }
 
@@ -124,6 +131,12 @@
         line-height: 50px;
         font-size: 1.3rem;
     }
+
+    .nav-menu-user_visible{
+        /* top: 80px; */
+        left: 80%;
+        /* transition: 0.3s; */
+    }
 }
 
 /*Laptops/Computadoras*/
@@ -135,6 +148,7 @@
         justify-content: center;
         align-items: flex-start;
         width: 100%;
+        position: relative;
         /* margin-left: 1px; */
     }
 
@@ -148,18 +162,20 @@
     /* Menú principal */
     .menu{
         /* border: 1px solid blue; */
+        border: none;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         background-color: var(--main-bg-color);
-        position: absolute;
+        /* position: absolute; */
         top: 0; 
-        left: 43%;
+        left: 40%;
         width: 43%;
         height: 110PX;
         line-height: 110px;
         padding: 0;
         overflow-y: hidden;
+        overflow-x: hidden;
     }
 
     #menu-items {
@@ -183,9 +199,10 @@
         /* border: 1px solid green; */
         background-color: var(--main-bg-color);
         position: absolute;
-        top: 190px; /*De acuerdo al alto del elemento anterior*/
-        left: 2px;
+        top: 90px; /*De acuerdo al alto del elemento anterior*/
+        left: 0;
         width: 178px;
+        margin-left: 5px;
     }
 
     #menu-items-user {    
@@ -195,7 +212,7 @@
     }
 
     .nav-menu-user_visible{
-        top: 190px;
+        top: 90px;
         transition: 0;
     }
 }

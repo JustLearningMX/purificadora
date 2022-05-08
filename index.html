@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="./source/css/logout.css">
     <link rel="stylesheet" href="./source/css/eliminar.css">
     <link rel="stylesheet" href="./source/css/cambiarPassword.css">
+    <link rel="stylesheet" href="./source/css/enConstruccion.css">
+    <link rel="stylesheet" href="./source/css/puntoDeVenta.css">
 
     <!-- Se importan los MÓDULOS JS necesarios -->
     <script type="module" src="./source/config/usuario.js"></script>
@@ -80,10 +82,10 @@
         <script type="module">
             import { mostrarSeccionNosotros } from './source/components/nosotros.js';
             import { mostrarMisCompras } from './source/components/miscompras.js';
-            import { mostrarDashboard } from './source/components/dashboard.js';
+            import { ventanaDePuntoDeVenta } from './source/components/ventas/puntoDeVenta.js';
             import { usuario } from './source/config/usuario.js';
 
-            usuario.logueado && usuario.admin ? mostrarDashboard() : 
+            usuario.logueado && usuario.admin ? ventanaDePuntoDeVenta() : 
             usuario.logueado && !usuario.admin ? mostrarMisCompras() :
             mostrarSeccionNosotros();
         </script>

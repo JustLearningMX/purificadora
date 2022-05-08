@@ -15,6 +15,8 @@ import { mostrarLogout } from '../components/logout.js'
 import { mostrarDashboard } from '../components/dashboard.js'
 import { mostrarMisCompras } from '../components/miscompras.js';
 import { mostrarReportes } from '../components/reportes.js';
+import { mostrarSeccionEnConstruccion } from '../components/construccion.js';
+import { ventanaDePuntoDeVenta } from '../components/ventas/puntoDeVenta.js';
 
 const usuario = usuarioLogueado ? {
     logueado: true,
@@ -56,8 +58,8 @@ function controladorSubMenuUsuario (opcionUsuario){
     opcionUsuario && opcionUsuario === 'Registro' ? mostrarSignUp() : 
     opcionUsuario && opcionUsuario === 'Mis compras' ? mostrarMisCompras() : 
     opcionUsuario && opcionUsuario === 'Dashboard' ? mostrarDashboard() : 
-    opcionUsuario && opcionUsuario === 'Reportes' ? mostrarReportes() : 
-    opcionUsuario && opcionUsuario === 'Ventas' ? console.log('Eligió Ventas') : 
+    opcionUsuario && opcionUsuario === 'Reportes' ? mostrarSeccionEnConstruccion('Sección Reportes') : 
+    opcionUsuario && opcionUsuario === 'Ventas' ? ventanaDePuntoDeVenta() : 
     opcionUsuario && opcionUsuario === 'Salir' ? mostrarLogout() : 
     console.log('No existe');
 }

@@ -156,44 +156,4 @@ const mostrarMisCompras = () => {
   crearMiscompras(main);
 };
 
-/* 
-//Escuchamos si hay clic los botones
-document.addEventListener("click", (event) =>{
-    const nodoActual = event.path[0];//Ubicamos el nodo al que se dió clic
-
-    const isBoton = nodoActual.getAttribute('class') === 'submittButtonLogin' ? true : false;
-
-    if(isBoton){
-
-      //Limpiamos la caja q muestra mensajes de error
-    //   const divError = document.querySelector('.errorCampoOcultar');
-    //   while (divError.firstChild) {
-    //     divError.removeChild(divError.firstChild);
-    //   }
-
-        const telefono = event.path[2].children[0].value;
-        const password = event.path[2].children[1].value;
-        
-        event.preventDefault();
-        
-        //Obtenemos el botón
-        const botonContenedor = document.querySelector('#buttonContainer');
-
-        //Creamos un componente Spinner
-        const spinnerBoton = spinner();
-
-        //Adjuntamos el spinner al botón
-        botonContenedor.appendChild(spinnerBoton);
-
-        //Deshabilitamos el botón
-        const boton = document.querySelector('.submittButtonLogin');
-        boton.value = 'Validando datos'; //Cambiamos el texto del botón
-        boton.setAttribute('disabled', 'true'); //Deshabilitamos el botón
-        boton.classList.toggle("buttonAwaiting"); //Agregamos CSS al botón ya deshabilitado
-        
-        validandoLogin(event, telefono, password, boton)
-    }
-
-}); */
-
 export { mostrarMisCompras };

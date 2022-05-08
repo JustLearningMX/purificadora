@@ -1,10 +1,6 @@
 #main{
     grid-area: main;
     padding: 1.2rem;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    /* border: 1px solid crimson; */
 }
 
 .divErrorMain{
