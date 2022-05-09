@@ -20,7 +20,7 @@
     flex-direction: column; /*Los acomoda uno debajo del otro*/
     margin: 0;
     background-color: var(--main-bg-color);
-    position: fixed;
+    position: absolute;
     top: 80px; /*De acuerdo al alto del elemento anterior*/
     left: 100%;/*Opciones de menú fuera de pantalla*/
     transition: left 0.3s;
@@ -70,7 +70,7 @@
     border-radius: 10px;
     list-style: none;    
     background-color: var(--main-bg-color);
-    position: fixed;
+    position: absolute;
     top: 80px; /*De acuerdo al alto del elemento anterior calc(80px - 50%)*/
     left: 100%;/*Opciones de menú fuera de pantalla*/
     transition: left 0.3s;
@@ -104,7 +104,7 @@
 
 .nav-menu-user_visible{
     /* top: 80px; */
-    left: 68%;
+    left: 72%;
     transition: 0.3s;
 }
 
@@ -134,7 +134,7 @@
 
     .nav-menu-user_visible{
         /* top: 80px; */
-        left: 80%;
+        left: 77%;
         /* transition: 0.3s; */
     }
 }
@@ -145,18 +145,12 @@
         /* border: 1px solid blue; */
         grid-area: navbar;
         display: flex;
-        justify-content: center;
+        justify-content:left;
+        
         align-items: flex-start;
         width: 100%;
-        position: relative;
+        position: absolute;
         /* margin-left: 1px; */
-    }
-
-    .navbar-icons{
-        /* border: 1px solid blue; */
-        width: 50px;
-        margin-top: 2rem;
-        cursor:auto;
     }
 
     /* Menú principal */
@@ -195,11 +189,21 @@
     *Menú del usuario**
     ******************/
 
+    .navbar-icons{
+        position: relative;
+        /* border: 1px solid blue; */
+        width: 50px;
+        margin-top: 2rem;
+        cursor:auto;
+        top: 100px;
+        left: 69px;
+    }
+
     .subMenuUser{
         /* border: 1px solid green; */
-        background-color: var(--main-bg-color);
-        position: absolute;
-        top: 90px; /*De acuerdo al alto del elemento anterior*/
+        border: none;
+        position: relative;
+        top: 115px;
         left: 0;
         width: 178px;
         margin-left: 5px;
@@ -212,7 +216,7 @@
     }
 
     .nav-menu-user_visible{
-        top: 90px;
+        top: 115px;
         transition: 0;
     }
 }
