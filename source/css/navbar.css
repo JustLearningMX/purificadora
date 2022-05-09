@@ -2,7 +2,12 @@
     grid-area: navbar;
     display: flex;
     justify-content: space-around;
-    align-items: center;    
+    align-items: center;
+    position: fixed;
+    left: 70%;
+    width: 30%;
+    height: 80px;
+    background-color: var(--main-bg-color);    
 }
 
 .navbar-icons{
@@ -16,11 +21,10 @@
     border-radius: 10px;
     list-style: none;
     display: flex;
-    /*align-items: center; Centra opcion del menú horizontalmente*/
     flex-direction: column; /*Los acomoda uno debajo del otro*/
     margin: 0;
     background-color: var(--main-bg-color);
-    position: absolute;
+    position: fixed;
     top: 80px; /*De acuerdo al alto del elemento anterior*/
     left: 100%;/*Opciones de menú fuera de pantalla*/
     transition: left 0.3s;
@@ -66,15 +70,16 @@
 
 .subMenuUser{
     /* border: 1px solid crimson; */
+    display: block;
     border: 1px solid var(--second-bg-color);
     border-radius: 10px;
     list-style: none;    
     background-color: var(--main-bg-color);
-    position: absolute;
-    top: 80px; /*De acuerdo al alto del elemento anterior calc(80px - 50%)*/
+    position: fixed;
+    top: 80px; /*De acuerdo al alto del elemento anterior*/
     left: 100%;/*Opciones de menú fuera de pantalla*/
     transition: left 0.3s;
-    width: auto; /*Ancho a ocupar*/
+    width: 100%; /*Ancho a ocupar*/
     height: auto; 
     overflow-y: auto; /*Agrega scroll x si la pantalla supera el contenido*/
     color: var(--main-a-text-color);
@@ -104,12 +109,13 @@
 
 .nav-menu-user_visible{
     /* top: 80px; */
-    left: 72%;
-    transition: 0.3s;
+    left: 0;
+    transition: 0.5s;
 }
 
 /* Tabletas */
 @media screen and (min-width: 600px) and (max-width: 1024px) {
+
     .navbar-icons{
         width: 50px;
     }
@@ -117,7 +123,6 @@
     /* Menú principal */
     .menu{
         width: 50%; /* Que ocupe todo el ancho */
-        /* height: auto; Ajusta el menú a la altura restante de la pantalla */
         overflow-y: hidden;
     }
 
@@ -133,90 +138,60 @@
     }
 
     .nav-menu-user_visible{
-        /* top: 80px; */
-        left: 77%;
-        /* transition: 0.3s; */
+        width: 30%;
+        left: 60%;
     }
 }
 
 /*Laptops/Computadoras*/
 @media screen and (min-width: 1024px){
     #navbar{
-        /* border: 1px solid blue; */
-        grid-area: navbar;
-        display: flex;
-        justify-content:left;
-        
         align-items: flex-start;
-        width: 100%;
-        position: absolute;
-        /* margin-left: 1px; */
+        position: relative;
+        left: 0;
+        width: 200px;
+        height: auto;
+    }    
+
+    .navbar-icons{
+        margin-top: 1.2rem;
+        width: 60px;
+        cursor: auto;
     }
 
     /* Menú principal */
-    .menu{
-        /* border: 1px solid blue; */
+    .menu{    
+        padding: 0;        
         border: none;
-        display: flex;
+        top: 0;
+        left: 45%;
+        width: 100%;
+        height: 110px;        
+        border-radius: 0;
         flex-direction: row;
-        justify-content: space-between;
-        background-color: var(--main-bg-color);
-        /* position: absolute; */
-        top: 0; 
-        left: 40%;
-        width: 43%;
-        height: 110PX;
-        line-height: 110px;
-        padding: 0;
         overflow-y: hidden;
-        overflow-x: hidden;
+        overflow-x: hidden;        
     }
 
     #menu-items {
-        /* border: 1px solid green; */
+        /* border: 1px solid crimson; */
         line-height: 110px;
-        font-size: 1.4rem;
-        padding: 0 10px;
+        width: calc(45% / 3);
+        font-size: 1.5rem;
     }
-    
+
     .nav-link-main:hover,
     .menu li.selected span {
         background-color: transparent;
         color: var(--second-a-text-color);
     }
 
-    /*******************
-    *Menú del usuario**
-    ******************/
-
-    .navbar-icons{
-        position: relative;
-        /* border: 1px solid blue; */
-        width: 50px;
-        margin-top: 2rem;
-        cursor:auto;
-        top: 100px;
-        left: 69px;
-    }
-
     .subMenuUser{
         /* border: 1px solid green; */
         border: none;
-        position: relative;
-        top: 115px;
+        position: absolute;
+        z-index: 0;
         left: 0;
-        width: 178px;
-        margin-left: 5px;
-    }
-
-    #menu-items-user {    
-        line-height: 50px;
-        font-size: 1.3rem;
-        font-weight: 500;
-    }
-
-    .nav-menu-user_visible{
-        top: 115px;
-        transition: 0;
+        margin-top: .7rem;
     }
 }

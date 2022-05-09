@@ -108,7 +108,7 @@ html {
         "header header" 110px
         "mensajes   mensajes" auto
         "navbar   main" 1fr
-        "footer footer" auto / .2fr 1.2fr;
+        "footer footer" auto / 200px 1fr;
     }
   }
   
