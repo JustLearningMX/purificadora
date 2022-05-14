@@ -22,10 +22,18 @@ const opcionesSubmenuUserCliente = [
     'Salir'
 ];
 
+//Usuario registrado como Empleado
+const opcionesSubmenuUserEmpleado = [
+    'Ventas',
+    'Dashboard',
+    'Salir'
+];
+
 //Usuario registrado como Admin
 const opcionesSubmenuUserAdmin = [
     'Ventas',
     'Dashboard',
+    'Catálagos',
     'Reportes',
     'Salir'
 ];
@@ -57,8 +65,12 @@ if(!usuario.logueado){
 // Si el usuario está logueado y es Admin
 else if(usuario.logueado && usuario.admin){
     mostrarOpcionesSubMenu(opcionesSubmenuUserAdmin);
+} 
+// Si el usuario está logueado, no es Admin pero si Empleado
+else if(usuario.logueado && usuario.empleado){
+    mostrarOpcionesSubMenu(opcionesSubmenuUserEmpleado);
 }
-// Si el usuario está logueado y no es Admin entonces es Cliente
+// Si el usuario está logueado y no es Admin ni Empleado entonces es Cliente
 else {
     mostrarOpcionesSubMenu(opcionesSubmenuUserCliente);
 }  

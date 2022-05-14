@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="./source/css/cambiarPassword.css">
     <link rel="stylesheet" href="./source/css/enConstruccion.css">
     <link rel="stylesheet" href="./source/css/puntoDeVenta.css">
+    <link rel="stylesheet" href="./source/css/nosotros.css">
 
     <!-- Se importan los MÓDULOS JS necesarios -->
     <script type="module" src="./source/config/usuario.js"></script>
@@ -78,14 +79,14 @@
     </div>
 
     <!-- Sección principal -->
-    <main id="main">        
+    <main id="main" class="main">        
         <script type="module">
             import { mostrarSeccionNosotros } from './source/components/nosotros.js';
             import { mostrarMisCompras } from './source/components/miscompras.js';
             import { ventanaDePuntoDeVenta } from './source/components/ventas/puntoDeVenta.js';
             import { usuario } from './source/config/usuario.js';
 
-            usuario.logueado && usuario.admin ? ventanaDePuntoDeVenta() : 
+            usuario.logueado && (usuario.admin || usuario.empleado) ? ventanaDePuntoDeVenta() : 
             usuario.logueado && !usuario.admin ? mostrarMisCompras() :
             mostrarSeccionNosotros();
         </script>
@@ -124,5 +125,9 @@
             <img class="logoBotellon" src="./source/assets/logo-footer.png" alt="logo-purificadora">
         </section>
     </footer>    
+
+    <!-- Scripts diferidos-->
+    <script defer type="module" src="./source/js/validacionesPuntoDeVenta.js"></script>
+    
 </body>
 </html>

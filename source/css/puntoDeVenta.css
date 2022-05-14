@@ -30,6 +30,13 @@
     align-items: center;
 }
 
+.buscador{
+    background-image: url('../assets/icons/searchicon.png');
+    background-position: 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
 .labelcliente{
     /* border: 1px solid green; */
     width: 100%;
@@ -150,21 +157,31 @@
 
 
 #listaDeComprasContainer{
-    border-bottom: 1px solid var(--main-a-text-color);
+    border:  1px solid var(--second-bg-color);
+    /* border-bottom: 1px solid green; */
     grid-area: resumen;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 0;
     margin: 0;
-    overflow-y: auto;
     margin-top: 10px;
+    overflow-y: auto;
 }
 
 .tablaListaCompras{
     width: 100%;
-    background-color: var(--main-a-text-color);
     color: var(--second-text-color);
     border: none;
+    /* border-bottom: 1px solid red; */
     border-radius: 10px 10px 0 0;
+}
+
+.filaEncabezados{    
+    background-color: var(--main-a-text-color);
+}
+
+.filaItems{
+    color: var(--main-text-color);
+    text-align: center;
 }
 
 .encabezadoItem,
@@ -201,7 +218,7 @@
     }
 
     .buscador{
-        width: 40%;
+        width: 50%;
     }
     
     /*ESTILOS DE LA SECCIÓN DE LOS PRODUCTOS*/

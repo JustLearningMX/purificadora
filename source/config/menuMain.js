@@ -10,7 +10,7 @@ import { mostrarSeccionServicios } from '../components/servicios.js';
 import { mostrarSeccionContacto } from '../components/contacto.js';
 
 export function controladorMenuMain (opcionUsuario){
-    opcionUsuario && opcionUsuario === 'Nosotros' ? mostrarSeccionEnConstruccion('Sección Nosotros') :
+    opcionUsuario && opcionUsuario === 'Nosotros' ? mostrarSeccionNosotros() :
     opcionUsuario === 'Servicios' ? mostrarSeccionEnConstruccion('Sección Servicios') : 
     opcionUsuario === 'Contacto' ? mostrarSeccionEnConstruccion('Sección Contacto') :
     console.log('No existe');

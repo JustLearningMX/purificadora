@@ -3,7 +3,8 @@
  * UNA VENTANA PARA EL PUNTO DE VENTA
  */
  import { crearElemento } from '../../utils/crearNodos.js';
- import { crearComponenteProductos } from '../productos.js';
+ import { crearComponenteProductos } from '../productos.js'; 
+ import { renderizarTabla } from '../../js/validacionesPuntoDeVenta.js';
 
 function crearVentanaPuntoDeVenta(main) {
 
@@ -35,10 +36,14 @@ function crearVentanaPuntoDeVenta(main) {
         },
         {
             type: 'placeholder', 
-            name: 'Ingrese número de teléfono'
+            name: 'Teléfono o nombre del cliente'
         }
     ], null, true); //Not required, Autofocus
     labelCliente.textContent= 'Cliente sin registrar';
+    buscador.addEventListener('keyup', (event) => {
+        event.preventDefault();
+        buscador.value ? console.log(buscador.value) : '';
+    });
 
     //Sección que muestra lo que el cliente lleva
     const sectionListaCompras = crearElemento('section', [{type: 'id', name: 'listaDeComprasContainer'}, {type: 'class', name: 'containersVentas'}]);
@@ -49,7 +54,7 @@ function crearVentanaPuntoDeVenta(main) {
     const encabezadoDescripcion = crearElemento('td', [{type: 'class', name: 'encabezadoDescripcion'}]);
     const encabezadoPrecio = crearElemento('td', [{type: 'class', name: 'encabezadoPrecio'}]);
 
-    encabezadoItem.textContent = '#';
+    encabezadoItem.textContent = 'Cantidad';
     encabezadoDescripcion.textContent = 'Descripción';
     encabezadoPrecio.textContent = 'Precio';
 
@@ -101,7 +106,16 @@ function crearVentanaPuntoDeVenta(main) {
 
     };
 
-    const ul = crearComponenteProductos(arrayDeProductos, arrayDeEstilosSeccionProductos);
+    function handleBtnsAgregar(idProducto){
+        // console.log(`Agregando producto ${arrayDeProductos[idProducto-1].nombre}`);
+        renderizarTabla(arrayDeProductos[idProducto-1]);
+    }
+
+    function handleBtnsQuitar(idProducto){
+        console.log(`Quitando producto ${arrayDeProductos[idProducto-1].nombre}`);
+    }
+
+    const ul = crearComponenteProductos(arrayDeProductos, arrayDeEstilosSeccionProductos, handleBtnsAgregar, handleBtnsQuitar);
     sectionProductosDisponibles.appendChild(ul);
 
     //Sección que muestra el resumen a pagar
@@ -214,6 +228,11 @@ function crearVentanaPuntoDeVenta(main) {
         name: 'Pagar'
         }
     ]);
+
+    botonPagar.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log('Cliente va a pagar sus productos');
+    });
 
     labelSubtotal.textContent = 'Subtotal:';
     labelDescuento.textContent = 'Descuento:';

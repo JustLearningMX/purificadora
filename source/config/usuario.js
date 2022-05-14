@@ -24,6 +24,7 @@ const usuario = usuarioLogueado ? {
     telefono: usuarioLogueado.telefono,
     email: usuarioLogueado.email,
     admin: usuarioLogueado.admin ? true : false,
+    empleado: usuarioLogueado.empleado ? true : false,
     token: usuarioLogueado.token,
     datos: usuarioDatos ? usuarioDatos.user || usuarioDatos.usuario : null,
 } : {
@@ -41,6 +42,7 @@ const actualizarUsuario = () => {
     usuario.telefono = usuarioLogueado.telefono;
     usuario.email = usuarioLogueado.email;
     usuario.admin = usuarioLogueado.admin ? true : false;
+    usuario.empleado = usuarioLogueado.empleado ? true : false;
     usuario.token = usuarioLogueado.token;
     usuario.datos = usuarioDatos ? usuarioDatos.user || usuarioDatos.usuario : null;
     
@@ -58,6 +60,7 @@ function controladorSubMenuUsuario (opcionUsuario){
     opcionUsuario && opcionUsuario === 'Registro' ? mostrarSignUp() : 
     opcionUsuario && opcionUsuario === 'Mis compras' ? mostrarMisCompras() : 
     opcionUsuario && opcionUsuario === 'Dashboard' ? mostrarDashboard() : 
+    opcionUsuario && opcionUsuario === 'Catálagos' ? mostrarSeccionEnConstruccion('Sección Catálagos') : 
     opcionUsuario && opcionUsuario === 'Reportes' ? mostrarSeccionEnConstruccion('Sección Reportes') : 
     opcionUsuario && opcionUsuario === 'Ventas' ? ventanaDePuntoDeVenta() : 
     opcionUsuario && opcionUsuario === 'Salir' ? mostrarLogout() : 

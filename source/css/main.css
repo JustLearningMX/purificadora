@@ -1,6 +1,8 @@
 #main{
     grid-area: main;
     padding: 1.2rem;
+    /* border: 1px solid crimson; */
+    min-height: 400px;
 }
 
 .divErrorMain{

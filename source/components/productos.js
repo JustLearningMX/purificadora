@@ -4,8 +4,9 @@
  */
  import { crearElemento } from '../utils/crearNodos.js';
 
- export function crearComponenteProductos(arrayDeProductos, arrayDeEstilos) {
-     const ul = crearElemento('ul', [{type: 'class', name: arrayDeEstilos.ul}]);
+ export function crearComponenteProductos(arrayDeProductos, arrayDeEstilos, handleBtnsAgregar, handleBtnsQuitar) {
+
+    const ul = crearElemento('ul', [{type: 'class', name: arrayDeEstilos.ul}]);
 
      arrayDeProductos.map( (producto) => {
         const li = crearElemento('li', [{type: 'class', name: arrayDeEstilos.li}, {type: 'key', name: producto.id}]);
@@ -54,6 +55,10 @@
             {
                 type: 'value', 
                 name: '+'
+            },
+            {
+                type: 'idProducto', 
+                name: `${producto.id}`
             }
         ]);
         
@@ -69,8 +74,16 @@
             {
                 type: 'value', 
                 name: '-'
+            },
+            {
+                type: 'idProducto', 
+                name: `${producto.id}`
             }
         ]);
+
+        //Listeners para los botones        
+        btnAgregarProducto.addEventListener('click', (evento)=> handleBtnsAgregar(evento.target.getAttribute('idProducto')));
+        btnQuitarProducto.addEventListener('click',  (evento)=> handleBtnsQuitar(evento.target.getAttribute('idProducto')));
 
         //Anexamos en orden los nodos creados
         pNombreProducto.textContent = producto.nombre;
